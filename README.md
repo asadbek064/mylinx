@@ -57,7 +57,7 @@ When setting it up, all environment variables are optional at build-time, but re
 ## ✨ Developer Notes
 
 - This project is still in early development, so there may be bugs 🐛
-- If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/realAsadbekKarimov) 
+- If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/realAsadbek) 
 
 <br />
 
