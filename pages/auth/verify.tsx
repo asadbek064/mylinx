@@ -28,22 +28,17 @@ const Verify = () => {
           </Text>
         </HStack>
       </Box>
-      <VStack align="left" spacing={6} w="35rem">
-        <Image src="/logo.png" alt="mylinx Logo" boxSize="3rem" />
+      <VStack align="left" spacing={6} w="40rem">
+        <Image src="/logo.png" alt="mylinx Logo"  />
         <VStack spacing={1} align="left">
           <Heading fontSize={{ base: '3xl', md: '4xl' }} color="black">
             We sent you an email!
           </Heading>
-          <Text fontSize={{ base: 'sm', md: 'xl' }} color="gray.700">
+          <Text fontSize={{ base: 'sm', md: '2xl' }} color="gray.700">
             Check your inbox for an email from <Link color="blue.500">auth@mail.mylinx.cc</Link>{' '}
-            and click the verification link to login to your account. If you don't see the email,
-            please check your spam folder :)
+            and click on the verification link. If you can't find the email, it might be in your spam folder. :)
           </Text>
         </VStack>
-        <Image
-          src="https://media0.giphy.com/media/a0h7sAqON67nO/giphy.gif?cid=ecf05e472zyeph2lb189kpba2tvmbq3cavrq4frmbywjbs2k&ep=v1_gifs_search&rid=giphy.gif&ct=g"
-          alt="mylinx Logo"
-        />
       </VStack>
     </Center>
   )

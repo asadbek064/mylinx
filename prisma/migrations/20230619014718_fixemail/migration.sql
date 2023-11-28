@@ -1,5 +1,5 @@
 -- AlterTable
-ALTER TABLE "KyteDraft" ALTER COLUMN "email" DROP NOT NULL;
+ALTER TABLE "MylinxDraft" ALTER COLUMN "email" DROP NOT NULL;
 
 -- AlterTable
-ALTER TABLE "KyteProd" ALTER COLUMN "email" DROP NOT NULL;
+ALTER TABLE "MylinxProd" ALTER COLUMN "email" DROP NOT NULL;

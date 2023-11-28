@@ -24,7 +24,7 @@ const Redirect = ({ user, setUser }: RedirectProps) => {
       <Heading fontSize="2xl">Redirects</Heading>
       <VStack align="left" spacing={2}>
         <Text fontWeight="semibold" pb={1}>
-          Set a link for your Kyte to redirect to
+          Set a link for your Mylinx to redirect to
         </Text>
 
         <Input

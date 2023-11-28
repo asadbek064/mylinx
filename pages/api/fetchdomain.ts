@@ -15,7 +15,7 @@ export default async (req: Request) => {
     if (!domainData || !domainData.userId) throw new Error('No domain found')
 
     const userArray = await sql`
-      SELECT "username" FROM "KyteProd" WHERE "userId" = ${domainData.userId}
+      SELECT "username" FROM "MylinxProd" WHERE "userId" = ${domainData.userId}
     `
     const user = userArray[0]
 

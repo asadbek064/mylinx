@@ -1,17 +1,17 @@
 /*
   Warnings:
 
-  - You are about to drop the `KyteHit` table. If the table is not empty, all the data it contains will be lost.
+  - You are about to drop the `MylinxHit` table. If the table is not empty, all the data it contains will be lost.
 
 */
 -- DropForeignKey
-ALTER TABLE "KyteHit" DROP CONSTRAINT "KyteHit_kyteId_fkey";
+ALTER TABLE "MylinxHit" DROP CONSTRAINT "MylinxHit_kyteId_fkey";
 
 -- DropTable
-DROP TABLE "KyteHit";
+DROP TABLE "MylinxHit";
 
 -- CreateTable
-CREATE TABLE "KyteView" (
+CREATE TABLE "MylinxView" (
     "id" TEXT NOT NULL,
     "kyteId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -20,8 +20,8 @@ CREATE TABLE "KyteView" (
     "ip" TEXT,
     "device" TEXT,
 
-    CONSTRAINT "KyteView_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "MylinxView_pkey" PRIMARY KEY ("id")
 );
 
 -- AddForeignKey
-ALTER TABLE "KyteView" ADD CONSTRAINT "KyteView_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "KyteProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MylinxView" ADD CONSTRAINT "MylinxView_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;

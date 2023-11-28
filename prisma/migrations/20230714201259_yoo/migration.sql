@@ -1,5 +1,5 @@
 -- AlterTable
-ALTER TABLE "KyteDraft" ADD COLUMN     "blurpfp" TEXT;
+ALTER TABLE "MylinxDraft" ADD COLUMN     "blurpfp" TEXT;
 
 -- AlterTable
-ALTER TABLE "KyteProd" ADD COLUMN     "blurpfp" TEXT;
+ALTER TABLE "MylinxProd" ADD COLUMN     "blurpfp" TEXT;

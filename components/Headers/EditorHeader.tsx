@@ -20,13 +20,13 @@ import {
   Image,
 } from '@chakra-ui/react'
 
-import { TKyteProdContext, TUser } from 'types/user'
-import ShareKyteModal from 'components/Modals/ShareKyteModal'
-import { KyteProdContext } from 'pages/_app'
+import { TMylinxProdContext, TUser } from 'types/user'
+import ShareMylinxModal from 'components/Modals/ShareMylinxModal'
+import { MylinxProdContext } from 'pages/_app'
 import { useRouter } from 'next/router'
 
 const EditorHeader = ({ user }: { user: TUser | null }) => {
-  const { kyteProd } = useContext(KyteProdContext) as TKyteProdContext
+  const { kyteProd } = useContext(MylinxProdContext) as TMylinxProdContext
 
   const toast = useToast()
   const router = useRouter()
@@ -38,11 +38,11 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
     signOut({ callbackUrl: '/' })
   }
 
-  const publishKyte = async () => {
+  const publishMylinx = async () => {
     setSaveState('saving')
     await fetch('/api/publishkyte')
     setSaveState('saved')
-    toast({ title: 'Kyte published!', status: 'success', duration: 3000 })
+    toast({ title: 'Mylinx published!', status: 'success', duration: 3000 })
   }
 
   const autoSave = async (userData: TUser) => {
@@ -82,7 +82,7 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
 
   return (
     <>
-      <ShareKyteModal username={user?.username} modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      <ShareMylinxModal username={user?.username} modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <HStack
         position="fixed"
         w="full"
@@ -112,7 +112,7 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
                   fontSize={{ base: 'sm', md: 'md' }}
                   width={{ base: '10rem', md: 'full' }}
                   textAlign="right"
-                  onClick={publishKyte}
+                  onClick={publishMylinx}
                 >
                   {saveState === 'saved' && 'Published! 🎉'}
                   {saveState === 'saving' && 'Publishing...'}
@@ -141,7 +141,7 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
                           View Profile
                         </Link>
                         <Link onClick={() => setModalOpen(true)} colorScheme="blue">
-                          Share Kyte
+                          Share Mylinx
                         </Link>
                         <Link onClick={logout} colorScheme="blue">
                           Log out

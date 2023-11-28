@@ -20,7 +20,7 @@
 
 ## 🚀 Getting Started
 
-#### Kyte Hosted
+#### Mylinx Hosted
 
 - Head to [mylinx.cc](https://mylinx.cc)
 - Hit the `Get Started` button

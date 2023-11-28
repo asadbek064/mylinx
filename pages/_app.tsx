@@ -11,20 +11,20 @@ type NextPageWithLayout = NextPage & { getLayout?: (page: ReactElement) => React
 type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout }
 
 export const UserContext = createContext({})
-export const KyteProdContext = createContext({})
+export const MylinxProdContext = createContext({})
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   const [user, setUser] = useState<TUser | null>(null)
-  const [kyteProd, setKyteProd] = useState<TUser | null>(null)
+  const [kyteProd, setMylinxProd] = useState<TUser | null>(null)
 
   const getUserSession = async () => {
     if (!window.location.pathname.includes(`/edit`)) return
     console.log('%cGetting user session', 'color: white; background-color: black; font-size: 20px')
     const start = new Date().getTime()
     const getuser = await fetch('/api/auth/getuser')
-    const { user, publishedKyte, error } = await getuser.json()
+    const { user, publishedMylinx, error } = await getuser.json()
 
     if (!user || error) {
       console.log('%cNo user found', 'color: white; background-color: black; font-size: 20px')
@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     }
 
     setUser(user)
-    setKyteProd(publishedKyte)
+    setMylinxProd(publishedMylinx)
 
     console.log(
       `%cUser found in ${new Date().getTime() - start}ms`,
@@ -50,9 +50,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     <ChakraProvider theme={extendTheme({ shadows: { outline: 'none' } })}>
       {getLayout(
         <UserContext.Provider value={{ user, setUser }}>
-          <KyteProdContext.Provider value={{ kyteProd, setKyteProd }}>
+          <MylinxProdContext.Provider value={{ kyteProd, setMylinxProd }}>
             <Component {...pageProps} />
-          </KyteProdContext.Provider>
+          </MylinxProdContext.Provider>
         </UserContext.Provider>
       )}
     </ChakraProvider>

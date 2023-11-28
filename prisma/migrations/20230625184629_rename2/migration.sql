@@ -11,7 +11,7 @@ ALTER TABLE "LinkHit" DROP CONSTRAINT "LinkHit_kyteId_fkey";
 DROP TABLE "LinkHit";
 
 -- CreateTable
-CREATE TABLE "KyteViewLink" (
+CREATE TABLE "MylinxViewLink" (
     "id" TEXT NOT NULL,
     "kyteId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -21,8 +21,8 @@ CREATE TABLE "KyteViewLink" (
     "device" TEXT,
     "link" TEXT,
 
-    CONSTRAINT "KyteViewLink_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "MylinxViewLink_pkey" PRIMARY KEY ("id")
 );
 
 -- AddForeignKey
-ALTER TABLE "KyteViewLink" ADD CONSTRAINT "KyteViewLink_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "KyteProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MylinxViewLink" ADD CONSTRAINT "MylinxViewLink_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -80,7 +80,7 @@ const EditUsername = ({ user, setUser }: { user: TUser; setUser: (user: TUser) =
 
   return (
     <VStack pr={{ base: 0, md: '30%' }} align="left" spacing={2}>
-      <Text fontWeight="semibold">Kyte Username</Text>
+      <Text fontWeight="semibold">Mylinx Username</Text>
       <Box>
         <InputGroup size="sm">
           <InputLeftAddon children="mylinx.cc/" />

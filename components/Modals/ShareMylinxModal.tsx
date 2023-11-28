@@ -22,7 +22,7 @@ type GetStartedModalProps = {
   username?: string
 }
 
-const ShareKyteModal = ({ modalOpen, setModalOpen, username }: GetStartedModalProps) => {
+const ShareMylinxModal = ({ modalOpen, setModalOpen, username }: GetStartedModalProps) => {
   const urls = ['kyte.bio', 'kyte.lol', 'mylinx.cc', 'yoyo.so']
   const socials = [
     {
@@ -70,7 +70,7 @@ const ShareKyteModal = ({ modalOpen, setModalOpen, username }: GetStartedModalPr
         <ModalBody pb={20} px={{ base: 4, md: 20 }}>
           <VStack pt={12} spacing={8}>
             <Heading fontSize={{ base: 'md', md: 'lg' }}>
-              Share your Kyte with the world 🌎❤️
+              Share your Mylinx with the world 🌎❤️
             </Heading>
             <SimpleGrid columns={2} textAlign="center" spacing={4}>
               {urls.map((url, index) => (
@@ -130,4 +130,4 @@ const ShareKyteModal = ({ modalOpen, setModalOpen, username }: GetStartedModalPr
   )
 }
 
-export default ShareKyteModal
+export default ShareMylinxModal

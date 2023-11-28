@@ -26,8 +26,6 @@ export const authOptions: NextAuthOptions = {
       // here you have two options: use an http api or setup an smpt server
       // if you want all dependencies opensource, smpt will be eaiser
       // otherwise customize what ya want in /controllers/emails.ts
-      // questions? feel free to dm me on twitter @aleemrehmtulla
-
       // server: {
       //   host: process.env.SMTP_HOST,
       //   port: process.env.SMTP_PORT,

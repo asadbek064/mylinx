@@ -17,9 +17,9 @@ const LandingHero = () => {
       </Text>
 
       <Button
-        bg="#7F61D3"
-        _hover={{ bg: '#6F54BA' }}
-        _active={{ bg: '#5B4499' }}
+        bg="#38A169"
+        _hover={{ bg: '#2F855A' }}
+        _active={{ bg: '#38A169' }}
         rounded="18px"
         fontSize="xl"
         fontWeight="medium"

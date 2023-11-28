@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "KyteDraft" (
+CREATE TABLE "MylinxDraft" (
     "userId" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -16,11 +16,11 @@ CREATE TABLE "KyteDraft" (
     "vcf" JSONB,
     "domains" TEXT[] DEFAULT ARRAY[]::TEXT[],
 
-    CONSTRAINT "KyteDraft_pkey" PRIMARY KEY ("userId")
+    CONSTRAINT "MylinxDraft_pkey" PRIMARY KEY ("userId")
 );
 
 -- CreateTable
-CREATE TABLE "KyteProd" (
+CREATE TABLE "MylinxProd" (
     "userId" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -37,23 +37,23 @@ CREATE TABLE "KyteProd" (
     "vcf" JSONB,
     "domains" TEXT[] DEFAULT ARRAY[]::TEXT[],
 
-    CONSTRAINT "KyteProd_pkey" PRIMARY KEY ("userId")
+    CONSTRAINT "MylinxProd_pkey" PRIMARY KEY ("userId")
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "KyteDraft_email_key" ON "KyteDraft"("email");
+CREATE UNIQUE INDEX "MylinxDraft_email_key" ON "MylinxDraft"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "KyteDraft_username_key" ON "KyteDraft"("username");
+CREATE UNIQUE INDEX "MylinxDraft_username_key" ON "MylinxDraft"("username");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "KyteProd_email_key" ON "KyteProd"("email");
+CREATE UNIQUE INDEX "MylinxProd_email_key" ON "MylinxProd"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "KyteProd_username_key" ON "KyteProd"("username");
+CREATE UNIQUE INDEX "MylinxProd_username_key" ON "MylinxProd"("username");
 
 -- AddForeignKey
-ALTER TABLE "KyteDraft" ADD CONSTRAINT "KyteDraft_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MylinxDraft" ADD CONSTRAINT "MylinxDraft_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "KyteProd" ADD CONSTRAINT "KyteProd_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MylinxProd" ADD CONSTRAINT "MylinxProd_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

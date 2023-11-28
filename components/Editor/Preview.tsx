@@ -2,9 +2,9 @@ import { Box, Center, VStack } from '@chakra-ui/react'
 
 import { TUser } from 'types/user'
 import { THEMES } from 'consts/themes'
-import Icons from '../Kyte/Icons/Icons'
-import Links from '../Kyte/Links/Links'
-import UserData from '../Kyte/UserData'
+import Icons from '../Mylinx/Icons/Icons'
+import Links from '../Mylinx/Links/Links'
+import UserData from '../Mylinx/UserData'
 
 const Preview = ({ user }: { user: TUser }) => {
   const style = THEMES[user.theme as keyof typeof THEMES]

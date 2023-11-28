@@ -1,9 +1,9 @@
 import { Button, Heading, VStack, Text, Input, useToast } from '@chakra-ui/react'
 import { debounce } from 'lodash'
-import { KyteProdContext } from 'pages/_app'
+import { MylinxProdContext } from 'pages/_app'
 import { useContext, useState } from 'react'
 
-import { TKyteProdContext, TUser } from 'types/user'
+import { TMylinxProdContext, TUser } from 'types/user'
 import ChangeEmailModal from './ChangeEmailModal'
 
 type DangerProps = {
@@ -16,7 +16,7 @@ const DangerZone = ({ user, setUser }: DangerProps) => {
   const [isValid, setIsValid] = useState<boolean | null>(null)
 
   const toast = useToast()
-  const { kyteProd } = useContext(KyteProdContext) as TKyteProdContext
+  const { kyteProd } = useContext(MylinxProdContext) as TMylinxProdContext
 
   const validateDebouncer = debounce((email: string) => {
     validate(email)

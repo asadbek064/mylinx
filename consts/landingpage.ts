@@ -1,27 +1,24 @@
 export const LANDING_DOMAINS = [
-  { text: 'kyte.lol/harsh', color: 'D2F2F4' },
-  { text: 'kyte.bio/rochan', color: 'DAD2F1' },
-  { text: 'mylinx.cc/amy', color: 'D8FED2' },
-  { text: 'downsad.com/aleem', color: 'FED2D2' },
+  { text: 'mylinx.cc/jeff', color: 'D8FED2' },
 ]
 export const LANDING_ANALYITCS = {
   success: true,
-  totalHits: 203,
+  totalHits: 230,
   topLinks: [
     {
-      url: 'https://linkedin.com/in/aleemrehmtulla',
+      url: 'https://www.linkedin.com/in/asadbekkarimov/',
       title: 'Linkedin',
-      count: 61,
+      count: 91,
     },
     {
-      url: 'https://github.com/aleemrehmtulla',
+      url: 'https://github.com/asadbek064',
       title: 'Github',
-      count: 68,
+      count: 74,
     },
     {
-      url: 'https://twitter.com/aleemrehmtulla',
+      url: 'https://twitter.com/realasadbek',
       title: 'Twitter',
-      count: 16,
+      count: 18,
     },
   ],
   topCountries: [
@@ -75,20 +72,20 @@ export const LANDING_ANALYITCS = {
   trafficSources: [
     {
       referrer: 'https://t.co/',
-      count: 203,
+      count: 194,
     },
     {
-      referrer: 'https://github.com/aleemrehmtulla',
-      count: 23,
+      referrer: 'https://github.com/asadbel064',
+      count: 18,
+    },
+    {
+      referrer: 'https://asadbek.dev',
+      count: 14,
     },
     {
       referrer: 'https://www.google.com/',
-      count: 9,
-    },
-    {
-      referrer: 'https://aleemrehmtulla.com',
-      count: 7,
-    },
+      count: 4,
+    }
   ],
   timeSeriesData: [
     {
@@ -174,37 +171,3 @@ export const LANDING_ANALYITCS = {
   ],
 }
 
-export const USERS = [
-  {
-    username: 'arib',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/9a79e1fa-7bff-4d6c-c1ff-11366cc1c600/public',
-  },
-  {
-    username: 'khushi',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/4a7265d1-1f94-47f7-dbc7-cc3da68d1400/public',
-  },
-  {
-    username: 'ted',
-    pfp: 'https://rijytzcvtfszqvbxesej.supabase.co/storage/v1/object/public/avatars/test/ted1663851140407',
-  },
-  {
-    username: 'lightofrahim',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/b046d6ff-b354-496a-ed05-f08f874d4400/public',
-  },
-  {
-    username: 'joshua',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/fa4b34a2-fbdd-4d08-c7b9-6664ce629000/public',
-  },
-  {
-    username: 'nilesh',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/36b3b92b-6857-494b-ee37-dc5adc881800/public',
-  },
-  {
-    username: 'sukhmank',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/42b648bd-4f07-458c-d098-7c95dd407100/public',
-  },
-  {
-    username: 'jordan',
-    pfp: 'https://imagedelivery.net/fJqjILHN4RwWlhxfeDz2SA/8f3d94d3-262b-4b30-a94c-bbad15cd9a00/public',
-  },
-]

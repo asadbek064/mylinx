@@ -5,7 +5,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const threeDaysAgo = new Date()
   threeDaysAgo.setDate(threeDaysAgo.getDate() - 3)
 
-  const activeKytes = await prisma.kyteProd.findMany({
+  const activeMylinxs = await prisma.kyteProd.findMany({
     where: {
       OR: [
         {
@@ -43,17 +43,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   })
 
-  const activeKytesData = activeKytes.map((kyte) => ({
+  const activeMylinxsData = activeMylinxs.map((kyte) => ({
     name: kyte.name,
     totalPageHits: kyte.pageHits.length,
   }))
 
   // Sort by totalPageHits in descending order
-  activeKytesData.sort((a, b) => b.totalPageHits - a.totalPageHits)
+  activeMylinxsData.sort((a, b) => b.totalPageHits - a.totalPageHits)
 
-  const count = activeKytesData.length
+  const count = activeMylinxsData.length
 
-  return res.status(200).json({ count, activeKytesData })
+  return res.status(200).json({ count, activeMylinxsData })
 }
 
 export default handler

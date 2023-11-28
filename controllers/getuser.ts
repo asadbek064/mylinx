@@ -91,7 +91,7 @@ export const getUserFromUsername = async (username: string): Promise<TUserRes> =
   return { user: cleanPrismaData(userData) }
 }
 
-export const getPublishedKyteFromId = async (userId: string): Promise<TUserRes> => {
+export const getPublishedMylinxFromId = async (userId: string): Promise<TUserRes> => {
   const user = await prisma.kyteProd.findFirst({
     where: { userId },
   })

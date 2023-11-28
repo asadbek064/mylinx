@@ -1,21 +1,21 @@
 /*
   Warnings:
 
-  - You are about to drop the `KyteView` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `KyteViewLink` table. If the table is not empty, all the data it contains will be lost.
+  - You are about to drop the `MylinxView` table. If the table is not empty, all the data it contains will be lost.
+  - You are about to drop the `MylinxViewLink` table. If the table is not empty, all the data it contains will be lost.
 
 */
 -- DropForeignKey
-ALTER TABLE "KyteView" DROP CONSTRAINT "KyteView_kyteId_fkey";
+ALTER TABLE "MylinxView" DROP CONSTRAINT "MylinxView_kyteId_fkey";
 
 -- DropForeignKey
-ALTER TABLE "KyteViewLink" DROP CONSTRAINT "KyteViewLink_kyteId_fkey";
+ALTER TABLE "MylinxViewLink" DROP CONSTRAINT "MylinxViewLink_kyteId_fkey";
 
 -- DropTable
-DROP TABLE "KyteView";
+DROP TABLE "MylinxView";
 
 -- DropTable
-DROP TABLE "KyteViewLink";
+DROP TABLE "MylinxViewLink";
 
 -- CreateTable
 CREATE TABLE "HitLink" (
@@ -45,7 +45,7 @@ CREATE TABLE "HitPage" (
 );
 
 -- AddForeignKey
-ALTER TABLE "HitLink" ADD CONSTRAINT "HitLink_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "KyteProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "HitLink" ADD CONSTRAINT "HitLink_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "HitPage" ADD CONSTRAINT "HitPage_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "KyteProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "HitPage" ADD CONSTRAINT "HitPage_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;

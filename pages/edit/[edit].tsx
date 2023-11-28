@@ -6,8 +6,8 @@ import { useRouter } from 'next/router'
 import EditorHeader from 'components/Headers/EditorHeader'
 import LoadingScreen from 'components/Auth/LoadingScreen'
 
-import { TKyteProdContext, TUserContext } from 'types/user'
-import { KyteProdContext, UserContext } from 'pages/_app'
+import { TMylinxProdContext, TUserContext } from 'types/user'
+import { MylinxProdContext, UserContext } from 'pages/_app'
 import NoUserScreen from 'components/Auth/NoUserScreen'
 import { NextSeo } from 'next-seo'
 import Editor from 'components/Editor'
@@ -16,7 +16,7 @@ import { PosthogEvents } from 'consts/posthog'
 
 const Edit = () => {
   const { user, setUser } = useContext(UserContext) as TUserContext
-  const { kyteProd } = useContext(KyteProdContext) as TKyteProdContext
+  const { kyteProd } = useContext(MylinxProdContext) as TMylinxProdContext
 
   const router = useRouter()
   const [route, setRoute] = useState<string | null>(null)

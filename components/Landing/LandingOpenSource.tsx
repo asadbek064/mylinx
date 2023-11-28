@@ -2,7 +2,7 @@ import { Button, Heading, Text, VStack } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 
 const LandingOpenSource = () => {
-  const GITHUB_REPO = 'https://github.com/aleemrehmtulla/mylinx'
+  const GITHUB_REPO = 'https://github.com/asadbek064/mylinx'
   return (
     <VStack spacing={4}>
       <Heading fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}>Free and Open Source.</Heading>

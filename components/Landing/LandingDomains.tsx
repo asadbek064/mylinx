@@ -5,10 +5,10 @@ const LandingDomains = () => {
   return (
     <VStack spacing={8}>
       <VStack spacing={0} textAlign="center">
-        <Heading fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}>Use one of 4 domains.</Heading>
+        <Heading fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}>Use our domain.</Heading>
         <Heading fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}>Or bring your own.</Heading>
       </VStack>
-      <SimpleGrid columns={2} spacing={4} w="full">
+      <SimpleGrid columns={1} spacing={4} w="full">
         {LANDING_DOMAINS.map((domain) => (
           <Center
             bg={`#${domain.color}`}
@@ -26,7 +26,7 @@ const LandingDomains = () => {
       </SimpleGrid>
       <HStack w="100%" spacing={4}>
         <VStack
-          bg="#F0F8FF"
+          bg="#BEE3F8"
           border={1}
           borderColor="#EEEEEE"
           rounded="xl"
@@ -39,10 +39,10 @@ const LandingDomains = () => {
           <Text fontSize={{ base: '2xl', lg: '5xl' }} fontWeight="bold">
             400ms
           </Text>
-          <Text fontSize={{ base: 'sm', lg: 'lg' }}>Kyte Loads Fast.</Text>
+          <Text fontSize={{ base: 'sm', lg: 'lg' }}>Mylinx Loads Fast.</Text>
         </VStack>
         <VStack
-          bg="#FDF6F3"
+          bg="#FEFCBF"
           border={1}
           borderColor="#EEEEEE"
           rounded="xl"
@@ -55,13 +55,13 @@ const LandingDomains = () => {
           <Text fontSize={{ base: '2xl', lg: '5xl' }} fontWeight="bold">
             9 Themes
           </Text>
-          <Text fontSize={{ base: 'sm', lg: 'lg' }}>Kyte Looks Good.</Text>
+          <Text fontSize={{ base: 'sm', lg: 'lg' }}>Mylinx Looks Elegant.</Text>
         </VStack>
       </HStack>
       <Button
-        bg="#7F61D3"
-        _hover={{ bg: '#6F54BA' }}
-        _active={{ bg: '#5B4499' }}
+        bg="#38A169"
+        _hover={{ bg: '#2F855A' }}
+        _active={{ bg: '#38A169' }}
         transitionDuration="300ms"
         rounded="18px"
         py={{ base: 6, lg: 7 }}
