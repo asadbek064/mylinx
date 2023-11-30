@@ -23,7 +23,7 @@ type GetStartedModalProps = {
 }
 
 const ShareMylinxModal = ({ modalOpen, setModalOpen, username }: GetStartedModalProps) => {
-  const urls = ['kyte.bio', 'kyte.lol', 'mylinx.cc', 'yoyo.so']
+  const urls = ['mylinx.bio', 'mylinx.lol', 'mylinx.cc', 'yoyo.so']
   const socials = [
     {
       icon: FaTwitter,
@@ -33,17 +33,17 @@ const ShareMylinxModal = ({ modalOpen, setModalOpen, username }: GetStartedModal
     {
       icon: FaWhatsapp,
       name: 'whatsapp',
-      link: `https://wa.me/?text=Check%20out%20my%20kyte%20over%20on%20${'kyte.lol'}/${username}`,
+      link: `https://wa.me/?text=Check%20out%20my%20kyte%20over%20on%20${'mylinx.lol'}/${username}`,
     },
     {
       icon: FaLinkedin,
       name: 'linkedin',
-      link: `https://www.linkedin.com/sharing/share-offsite/?url=${'kyte.bio'}/${username}`,
+      link: `https://www.linkedin.com/sharing/share-offsite/?url=${'mylinx.bio'}/${username}`,
     },
     {
       icon: FaEnvelope,
       name: 'email',
-      link: `mailto:?subject=yo!%20check%20out%20my%20brand%20new%20kyte%20%3A%29&body=Check%20it%20out%20over%20on%20${'kyte.lol'}/${username}`,
+      link: `mailto:?subject=yo!%20check%20out%20my%20brand%20new%20kyte%20%3A%29&body=Check%20it%20out%20over%20on%20${'mylinx.lol'}/${username}`,
     },
   ]
 

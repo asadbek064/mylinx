@@ -12,7 +12,7 @@ const Mylinx = (user: TUser) => {
     <>
       <NextSeo
         title={user.seoTitle || `${user.name || user.username} | mylinx`}
-        description={user.seoDescription || `Check out ${user.name}'s kyte to grab their links!`}
+        description={user.seoDescription || `Check out ${user.name}'s mylinx to grab their links!`}
         canonical={`https://mylinx.cc/${user.username}`}
       />
       <User user={user} />

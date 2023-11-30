@@ -1,6 +1,6 @@
 export enum PosthogEvents {
-  KYTE_PAGE_HIT = 'server: kyte page hit',
-  KYTE_LINK_HIT = 'server: kyte link hit',
+  KYTE_PAGE_HIT = 'server: mylinx page hit',
+  KYTE_LINK_HIT = 'server: mylinx link hit',
 
   CREATED_ACCOUNT = 'server: created account',
   LOGGED_IN = 'server: logged in',
@@ -13,7 +13,7 @@ export enum PosthogEvents {
   CLICKED_SIGN_IN = 'client: clicked sign in',
   CLICKED_SIGN_UP = 'client: clicked sign up',
   CLICKED_VIEW_EXAMPLE = 'client: clicked view example',
-  CLICKED_EXAMPLE_KYTE = 'client: clicked example kyte',
+  CLICKED_EXAMPLE_KYTE = 'client: clicked example mylinx',
 
   UPDATED_USERNAME = 'client: updated username',
   UPDATED_AVATAR = 'client: updated avatar',

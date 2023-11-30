@@ -2,12 +2,12 @@ import prisma from 'lib/prisma'
 import { TUser } from 'types/user'
 
 export const updateMylinxEmail = async (userId: string, email: string) => {
-  await prisma.kyteDraft.updateMany({
+  await prisma.mylinxDraft.updateMany({
     where: { userId },
     data: { email },
   })
 
-  await prisma.kyteProd.updateMany({
+  await prisma.mylinxProd.updateMany({
     where: { userId },
     data: { email },
   })
@@ -19,7 +19,7 @@ export const updateMylinxEmail = async (userId: string, email: string) => {
 }
 
 export const updateDraftMylinx = async (userId: string, userData: TUser) => {
-  await prisma.kyteDraft.updateMany({
+  await prisma.mylinxDraft.updateMany({
     where: { userId },
     data: {
       username: userData.username || undefined,
@@ -42,12 +42,12 @@ export const updateDraftMylinx = async (userId: string, userData: TUser) => {
 }
 
 export const syncDraftToProd = async (userId: string) => {
-  const draftData = await prisma.kyteDraft.findFirst({
+  const draftData = await prisma.mylinxDraft.findFirst({
     where: { userId },
   })
 
   if (draftData) {
-    await prisma.kyteProd.updateMany({
+    await prisma.mylinxProd.updateMany({
       where: { userId },
       data: {
         username: draftData.username,

@@ -43,9 +43,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   })
 
-  const activeMylinxsData = activeMylinxs.map((kyte) => ({
-    name: kyte.name,
-    totalPageHits: kyte.pageHits.length,
+  const activeMylinxsData = activeMylinxs.map((mylinx) => ({
+    name: mylinx.name,
+    totalPageHits: mylinx.pageHits.length,
   }))
 
   // Sort by totalPageHits in descending order

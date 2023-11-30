@@ -11,8 +11,8 @@ export const CUSTOM_DOMAINS = [
   'www.yoyo.so',
   'downsad.com',
   'www.downsad.com',
-  'kyte.bio',
-  'www.kyte.bio',
-  'kyte.lol',
-  'www.kyte.lol',
+  'mylinx.bio',
+  'www.mylinx.bio',
+  'mylinx.lol',
+  'www.mylinx.lol',
 ]
