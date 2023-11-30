@@ -19,7 +19,7 @@ export const getUserFromSession = async (req: any): Promise<TUserRes> => {
   if (new Date(session.expires).getTime() < Date.now()) return { error: 'Session expired' }
   if (!session?.user?.email) return { error: 'No email found' }
 
-  const user = await prisma.kyteDraft.findFirst({ where: { email: session.user.email } })
+  const user = await prisma.mylinxDraft.findFirst({ where: { email: session.user.email } })
   if (!user) return { error: 'No user found' }
 
   // determine if the user is new or not
@@ -49,7 +49,7 @@ export const getUserFromNextAuth = async (
 
   if (!session?.user?.email) return { error: 'No email found' }
 
-  const user = await prisma.kyteDraft.findFirst({ where: { email: session.user.email } })
+  const user = await prisma.mylinxDraft.findFirst({ where: { email: session.user.email } })
   if (!user) throw new Error('No user found')
 
   // determine if the user is new or not

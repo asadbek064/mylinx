@@ -1,7 +1,7 @@
 import prisma from 'lib/prisma'
 
 export const validateEmail = async (email: string): Promise<boolean> => {
-  const draftUser = await prisma.kyteDraft.findFirst({
+  const draftUser = await prisma.mylinxDraft.findFirst({
     where: { email },
   })
   const prodUser = await prisma.kyteProd.findFirst({
@@ -14,7 +14,7 @@ export const validateEmail = async (email: string): Promise<boolean> => {
 }
 
 export const validateUsername = async (username: string, userId?: string): Promise<boolean> => {
-  const draftUser = await prisma.kyteDraft.findFirst({
+  const draftUser = await prisma.mylinxDraft.findFirst({
     where: { username },
     select: {
       username: true,

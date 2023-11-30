@@ -106,7 +106,7 @@ export const authOptions: NextAuthOptions = {
       }
     },
     createUser: async ({ user }) => {
-      await prisma.kyteDraft.create({
+      await prisma.mylinxDraft.create({
         data: {
           userId: user.id,
           email: user.email,

@@ -122,7 +122,7 @@ model User {
   setup         Boolean?   @default(false)
   accounts      Account[]
   domains       Domains[]
-  kyteDraft     MylinxDraft?
+  mylinxDraft     MylinxDraft?
   kyteProd      MylinxProd?
   sessions      Session[]
 }
