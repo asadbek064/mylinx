@@ -13,6 +13,7 @@ import LandingDomains from 'components/Landing/LandingDomains'
 import LandingExamples from 'components/Landing/LandingExamples'
 import LandingHero from 'components/Landing/LandingHero'
 import LandingDemo from 'components/Landing/LandingDemo'
+import LandingHeroFull from 'components/Landing/LandingHeroFull'
 
 const Home = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const Home = () => {
         description="Mylinx is an opensource Linktree alternative that allows you to share all your links in one place. Add custom domains, view click statistics and more."
         canonical="https://mylinx.cc"
       />
-
+       <LandingHeroFull />
       <VStack
         minH={{ base: '80vh', lg: '95vh' }}
         justify="space-between"
@@ -33,13 +34,14 @@ const Home = () => {
         mt={{ base: 52, lg: 60 }}
         color="black"
       >
-        <LandingHero />
-
+       {/*  <LandingHero /> */}
         {/* <LandingDemo /> */}
 
         <VStack spacing={32}>
           {/* <LandingExamples /> */}
-          <LandingDomains />
+          <div>
+            <h1 className='text-8xl font-black text-primary-700'>Cooming soon!</h1>
+          </div>
           <LandingAnalytics />
           <LandingFooter />
         </VStack>
