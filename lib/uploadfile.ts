@@ -6,8 +6,10 @@ type UploadFileResponse = {
 
 export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFileResponse> {
   const getuploadurl = await fetch('/api/images/getuploadurl')
-  const response = await getuploadurl.json()
-  const uploadURL = response.uploadURL
+  const response = await getuploadurl.json();
+  console.log(response);
+  
+  const uploadURL = response.uploadURL;
 
   const formData = new FormData()
   formData.append('file', file)

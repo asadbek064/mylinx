@@ -1,9 +1,9 @@
 export const LANDING_DOMAINS = [
-  { text: 'mylinx.cc/jeff', color: 'D8FED2' },
+  { text: 'mylinx.cc/Mary', color: 'D8FED2' },
 ]
 export const LANDING_ANALYITCS = {
   success: true,
-  totalHits: 230,
+  totalHits: 320,
   topLinks: [
     {
       url: 'https://www.linkedin.com/in/asadbekkarimov/',

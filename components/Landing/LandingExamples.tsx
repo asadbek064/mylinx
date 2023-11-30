@@ -24,7 +24,7 @@ const LandingExamples = () => {
         _hover={{ bg: '#2F855A' }}
         _active={{ bg: '#38A169' }}
         transitionDuration="300ms"
-        rounded="18px"
+        rounded="8px"
         fontSize={{ base: 'xl', lg: '2xl' }}
         py={{ base: 6, lg: 7 }}
         px={{ base: 8, lg: 24 }}

@@ -20,12 +20,12 @@ const ErrorPage = ({ code, message }: ErrorPageProps) => {
         <Text fontSize={{ base: 'sm', md: 'xl' }}>
           dm me on twitter for help:{' '}
           <Link
-            href="https://twitter.com/aleemrehmtulla"
+            href="https://twitter.com/realAsadbek"
             textDecor={'underline'}
             isExternal
             _hover={{ opacity: 0.8 }}
           >
-            @aleemrehmtulla
+            @realAsadbek
           </Link>
         </Text>
       </VStack>

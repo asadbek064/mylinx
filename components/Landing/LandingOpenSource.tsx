@@ -19,7 +19,7 @@ const LandingOpenSource = () => {
       <Button
         bg="black"
         color="white"
-        rounded="18px"
+        rounded="8px"
         size={'lg'}
         py={{ base: 6, lg: 7 }}
         fontSize={{ base: 'xl', lg: '2xl' }}

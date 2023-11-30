@@ -68,8 +68,8 @@ const TimeSeries = ({ timeSeries }: TimeSeriesProps) => {
           {
             data: PAGE_DATA.map((item) => item.views),
             label: 'Page Views',
-            borderColor: 'rgb(214,188,250)',
-            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+            borderColor: 'rgb(72,187,120)',
+            backgroundColor: 'rgb(72,187,120)',
             pointRadius: 0,
           },
         ],
@@ -78,7 +78,7 @@ const TimeSeries = ({ timeSeries }: TimeSeriesProps) => {
         responsive: true,
         plugins: {
           tooltip: {
-            backgroundColor: 'rgba(0,0,0,0.8)',
+            backgroundColor: '#171923',
             borderColor: 'white',
             borderWidth: 1,
             bodyColor: 'white',

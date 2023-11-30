@@ -11,7 +11,7 @@ const LoadingScreen = () => {
     <Center h="100vh">
       <VStack spacing={4}>
         <Box as={motion.div} animation={animation}>
-          <Text fontSize="6xl">🪁</Text>
+          <Text fontSize="6xl">👋</Text>
         </Box>
         <Text pt={4} fontSize="xs">
           If you&apos;re not redirected in a few seconds, click{' '}

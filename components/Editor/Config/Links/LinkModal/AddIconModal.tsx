@@ -57,7 +57,6 @@ const AddEmojiModal = ({ emoji, setEmoji, setAddEmoji, user }: AddEmojiModalProp
     '🦄',
     '👻',
     '🌶',
-    '🪁',
     '📞',
     '🚢',
     '👋',
@@ -99,7 +98,7 @@ const AddEmojiModal = ({ emoji, setEmoji, setAddEmoji, user }: AddEmojiModalProp
       // if results.length is less then 12, add some random emojis
       if (results.length < 12) {
         const amountToAdd = 12 - results.length
-        const randomEmojis = ['🤟', '🦄', '👻', '🌶', '🪁', '📞', '🚢', '👋', '🥶', '✉️', '🙉', '📆']
+        const randomEmojis = ['🤟', '🦄', '👻', '🌶',  '📞', '🚢', '👋', '🥶', '✉️', '🙉', '📆']
         for (let i = 0; i < amountToAdd; i++) {
           if (results.find((emoji: any) => emoji === randomEmojis[i])) {
             results.push(randomEmojis[i + 1])

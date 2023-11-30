@@ -5,7 +5,7 @@ const NoUserScreen = () => {
     <Center h="100vh">
       <VStack spacing={4}>
         <Box>
-          <Text fontSize="6xl">🪁</Text>
+          <Text fontSize="6xl">👋</Text>
         </Box>
         <Text pt={4} fontSize="xs">
           No user found. Try logging in again{' '}

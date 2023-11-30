@@ -35,13 +35,12 @@ const Home = () => {
       >
         <LandingHero />
 
-        <LandingDemo />
+        {/* <LandingDemo /> */}
 
         <VStack spacing={32}>
-          <LandingExamples />
+          {/* <LandingExamples /> */}
           <LandingDomains />
           <LandingAnalytics />
-          <LandingOpenSource />
           <LandingFooter />
         </VStack>
       </VStack>

@@ -58,22 +58,7 @@ const LandingDomains = () => {
           <Text fontSize={{ base: 'sm', lg: 'lg' }}>Mylinx Looks Elegant.</Text>
         </VStack>
       </HStack>
-      <Button
-        bg="#38A169"
-        _hover={{ bg: '#2F855A' }}
-        _active={{ bg: '#38A169' }}
-        transitionDuration="300ms"
-        rounded="18px"
-        py={{ base: 6, lg: 7 }}
-        fontSize={{ base: 'xl', lg: '2xl' }}
-        fontWeight="medium"
-        w="full"
-        color="white"
-        as="a"
-        href="/signup"
-      >
-        Try it out for free
-      </Button>
+
     </VStack>
   )
 }

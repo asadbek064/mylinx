@@ -3,8 +3,7 @@ const LandingHero = () => {
   return (
     <VStack spacing={4} align="center">
       <VStack spacing={0} align="center">
-        <Heading fontSize={{ base: '3xl', md: '5xl', lg: '7xl' }}>A Simple Link-In-Bio.</Heading>
-        <Heading fontSize={{ base: '3xl', md: '5xl', lg: '7xl' }}>Free and Opensource.</Heading>
+        <Heading fontSize={{ base: '2xl', md: '4xl', lg: '7xl' }}>The TikTok bio link to rule them all</Heading>
       </VStack>
 
       <Text
@@ -20,7 +19,7 @@ const LandingHero = () => {
         bg="#38A169"
         _hover={{ bg: '#2F855A' }}
         _active={{ bg: '#38A169' }}
-        rounded="18px"
+        rounded="8px"
         fontSize="xl"
         fontWeight="medium"
         color="white"
@@ -29,7 +28,7 @@ const LandingHero = () => {
         as="a"
         href="/signup"
       >
-        Create your mylinx
+        Create your Mylinx
       </Button>
       <Link color="gray.500" fontSize="lg" textAlign="center" cursor={'pointer'} href="/login">
         Login
