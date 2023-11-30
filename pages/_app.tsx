@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   const [user, setUser] = useState<TUser | null>(null)
-  const [kyteProd, setMylinxProd] = useState<TUser | null>(null)
+  const [mylinxProd, setMylinxProd] = useState<TUser | null>(null)
 
   const getUserSession = async () => {
     if (!window.location.pathname.includes(`/edit`)) return
@@ -50,7 +50,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     <ChakraProvider theme={extendTheme({ shadows: { outline: 'none' } })}>
       {getLayout(
         <UserContext.Provider value={{ user, setUser }}>
-          <MylinxProdContext.Provider value={{ kyteProd, setMylinxProd }}>
+          <MylinxProdContext.Provider value={{ mylinxProd, setMylinxProd }}>
             <Component {...pageProps} />
           </MylinxProdContext.Provider>
         </UserContext.Provider>

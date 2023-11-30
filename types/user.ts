@@ -46,7 +46,7 @@ export type TUserContext = {
   setUser: React.Dispatch<React.SetStateAction<TUser | null>>
 }
 export type TMylinxProdContext = {
-  kyteProd: TUser | null
+  mylinxProd: TUser | null
   setMylinxProd: React.Dispatch<React.SetStateAction<TUser | null>>
 }
 

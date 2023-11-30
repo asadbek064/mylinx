@@ -16,7 +16,7 @@ import { PosthogEvents } from 'consts/posthog'
 
 const Edit = () => {
   const { user, setUser } = useContext(UserContext) as TUserContext
-  const { kyteProd } = useContext(MylinxProdContext) as TMylinxProdContext
+  const { mylinxProd } = useContext(MylinxProdContext) as TMylinxProdContext
 
   const router = useRouter()
   const [route, setRoute] = useState<string | null>(null)
@@ -55,7 +55,7 @@ const Edit = () => {
     <>
       <NextSeo title="mylinx | Edit" />
       <EditorHeader user={user} />
-      <Editor user={user} setUser={setUser} kyteProd={kyteProd} route={route} />
+      <Editor user={user} setUser={setUser} mylinxProd={mylinxProd} route={route} />
     </>
   )
 }

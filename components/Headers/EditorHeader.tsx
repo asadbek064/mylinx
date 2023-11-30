@@ -26,7 +26,7 @@ import { MylinxProdContext } from 'pages/_app'
 import { useRouter } from 'next/router'
 
 const EditorHeader = ({ user }: { user: TUser | null }) => {
-  const { kyteProd } = useContext(MylinxProdContext) as TMylinxProdContext
+  const { mylinxProd } = useContext(MylinxProdContext) as TMylinxProdContext
 
   const toast = useToast()
   const router = useRouter()
@@ -64,7 +64,7 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
   )
 
   const checkChanges = () => {
-    const published = omit(kyteProd, ['createdAt', 'isNewUser', 'domains'])
+    const published = omit(mylinxProd, ['createdAt', 'isNewUser', 'domains'])
     const draft = omit(user, ['createdAt', 'isNewUser', 'domains'])
 
     if (!isEqual(published, draft)) {
@@ -76,9 +76,9 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
   }
 
   useEffect(() => {
-    if (!user || !kyteProd) return
+    if (!user || !mylinxProd) return
     checkChanges()
-  }, [user, kyteProd])
+  }, [user, mylinxProd])
 
   return (
     <>

@@ -113,7 +113,7 @@ export const authOptions: NextAuthOptions = {
         },
       })
 
-      const kyteUser = await prisma.kyteProd
+      const kyteUser = await prisma.mylinxProd
         .create({
           data: {
             userId: user.id,

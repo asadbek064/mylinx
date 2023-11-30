@@ -5,7 +5,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const threeDaysAgo = new Date()
   threeDaysAgo.setDate(threeDaysAgo.getDate() - 3)
 
-  const activeMylinxs = await prisma.kyteProd.findMany({
+  const activeMylinxs = await prisma.mylinxProd.findMany({
     where: {
       OR: [
         {

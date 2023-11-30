@@ -7,10 +7,10 @@ import Config from './Config'
 import Preview from './Preview'
 import { TUser } from 'types/user'
 
-type EditorProps = { user: TUser; setUser: (user: TUser) => void; kyteProd: TUser; route: string }
+type EditorProps = { user: TUser; setUser: (user: TUser) => void; mylinxProd: TUser; route: string }
 
-const Editor = ({ user, setUser, route, kyteProd }: EditorProps) => {
-  const [modalOpen, setModalOpen] = useState(kyteProd.username ? false : true)
+const Editor = ({ user, setUser, route, mylinxProd }: EditorProps) => {
+  const [modalOpen, setModalOpen] = useState(mylinxProd.username ? false : true)
 
   return (
     <Flex w="full" px={{ base: 4, md: 2 }} minH="100vh" mt="72px">

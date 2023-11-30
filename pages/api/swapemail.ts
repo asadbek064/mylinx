@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { updateMylinxEmail } from 'controllers/editkyte'
+import { updateMylinxEmail } from 'controllers/editmylinx'
 import { getUserFromNextAuth } from 'controllers/getuser'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

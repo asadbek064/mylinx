@@ -16,7 +16,7 @@ const DangerZone = ({ user, setUser }: DangerProps) => {
   const [isValid, setIsValid] = useState<boolean | null>(null)
 
   const toast = useToast()
-  const { kyteProd } = useContext(MylinxProdContext) as TMylinxProdContext
+  const { mylinxProd } = useContext(MylinxProdContext) as TMylinxProdContext
 
   const validateDebouncer = debounce((email: string) => {
     validate(email)
@@ -28,7 +28,7 @@ const DangerZone = ({ user, setUser }: DangerProps) => {
       return false
     }
 
-    if (email === kyteProd?.email) {
+    if (email === mylinxProd?.email) {
       setIsValid(false)
       toast({
         title: `Whoops! You can't change your email to your current email.`,

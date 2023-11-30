@@ -72,7 +72,7 @@ export const getUserFromNextAuth = async (
 }
 
 export const getUserFromUsername = async (username: string): Promise<TUserRes> => {
-  const user = await prisma.kyteProd.findFirst({
+  const user = await prisma.mylinxProd.findFirst({
     where: { username },
   })
 
@@ -92,7 +92,7 @@ export const getUserFromUsername = async (username: string): Promise<TUserRes> =
 }
 
 export const getPublishedMylinxFromId = async (userId: string): Promise<TUserRes> => {
-  const user = await prisma.kyteProd.findFirst({
+  const user = await prisma.mylinxProd.findFirst({
     where: { userId },
   })
 
