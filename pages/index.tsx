@@ -13,6 +13,9 @@ import LandingExamples from 'components/Landing/LandingExamples'
 import LandingHero from 'components/Landing/LandingHero'
 import LandingDemo from 'components/Landing/LandingDemo'
 import LandingHeroFull from 'components/Landing/LandingHeroFull'
+import FeatureHero from 'components/shared/FeatureHero'
+import { LANDING_FEATURES } from "consts/landingpage";
+import { features } from 'process'
 
 const Home = () => {
   useEffect(() => {
@@ -26,6 +29,13 @@ const Home = () => {
         canonical="https://mylinx.cc"
       />
        <LandingHeroFull />
+
+       <div className='flex flex-col'>
+        {LANDING_FEATURES.map((feature, index) => (
+          <FeatureHero key={index} data={feature} />
+        ))}
+      </div>
+
       <VStack
         minH={{ base: '80vh', lg: '95vh' }}
         justify="space-between"
@@ -33,15 +43,13 @@ const Home = () => {
         mt={{ base: 52, lg: 60 }}
         color="black"
       >
-       {/*  <LandingHero /> */}
+        {/*  <LandingHero /> */}
         {/* <LandingDemo /> */}
+
 
         <VStack spacing={32}>
           {/* <LandingExamples /> */}
-          <div>
-            <h1 className='text-8xl font-black text-primary-700'>Cooming soon!</h1>
-          </div>
-          <LandingAnalytics />
+          {/* <LandingAnalytics /> */}
           <LandingFooter />
         </VStack>
       </VStack>

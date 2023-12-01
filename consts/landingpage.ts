@@ -1,5 +1,40 @@
+import {FeatureHero} from "components/shared/FeatureHero";
+
 export const LANDING_DOMAINS = [
   { text: 'mylinx.cc/Mary', color: 'D8FED2' },
+];
+
+export const LANDING_FEATURES: FeatureHero[]  = [
+  {
+    heading: "Create and customize your Mylinx in minutes",
+    subHeading: "Combine your TikTok, Instagram, Twitter, website, store, videos, music, podcast, events, and more into one bio link page, crafted to boost conversions.",
+    buttonTitle: "Get started for free",
+    buttonLink: "/",
+    heroImage: "",
+    bgColor: "#781600",
+    leftSide: false,
+    color: '#FFFFFF'
+  },
+  {
+    heading: "Analyze your audience and keep your followers engaged",
+    subHeading: "Charts and Graphs. No 3rd parties needed. Page Views, Traffic Sources, Link Clicks, Etc.",
+    buttonTitle: "Get your link",
+    buttonLink: "/",
+    heroImage: "",
+    bgColor: "#FFFFFF",
+    leftSide: true,
+    color: '#111111'
+  },
+  {
+    heading: "Combine your content. F*ck the algorithm. Get paid.",
+    subHeading: "It's time for your content to be noticed.",
+    buttonTitle: "",
+    buttonLink: "/",
+    heroImage: "",
+    bgColor: "#254f1a",
+    leftSide: false,
+    color: '#FFFFFF'
+  }
 ]
 export const LANDING_ANALYITCS = {
   success: true,
