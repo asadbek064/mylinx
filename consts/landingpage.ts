@@ -11,9 +11,9 @@ export const LANDING_FEATURES: FeatureHero[]  = [
     buttonTitle: "Get started for free",
     buttonLink: "/",
     heroImage: "",
-    bgColor: "#781600",
+    bgColor: "#F87171",
     leftSide: false,
-    color: '#FFFFFF'
+    color: '#991B1B'
   },
   {
     heading: "Analyze your audience and keep your followers engaged",
@@ -31,7 +31,7 @@ export const LANDING_FEATURES: FeatureHero[]  = [
     buttonTitle: "",
     buttonLink: "/",
     heroImage: "",
-    bgColor: "#254f1a",
+    bgColor: "#84CC16",
     leftSide: false,
     color: '#FFFFFF'
   }

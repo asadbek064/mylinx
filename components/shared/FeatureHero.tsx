@@ -8,8 +8,8 @@ export interface FeatureHero {
   buttonTitle: string;
   buttonLink: string;
   heroImage: string;
-  color: string;
   bgColor: string;
+  color: string;
   leftSide: boolean;
 }
 
@@ -31,49 +31,50 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
                 <div className={`max-w-3xl mb-6 font-light text-[${data.color}] lg:mb-8 md:text-xl lg:text-2xl`}>
                     {data.subHeading}
                 </div>
+
+                {data.buttonTitle.length > 0 ? (
+                    <Link href={data.buttonLink}>
+                      <Button  rightIcon={<IoMdArrowRoundForward />} className="text-neutral-900" colorScheme="green" size="lg"  variant='solid'>
+                          {data.buttonTitle}
+                      </Button>
+                    </Link>
+                ): ('')}
               </div>
 
               <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                 <img
-                  src="https://media.tenor.com/TKq6Fn71XPgAAAAd/seriously-seriously-cat.gif"
+                  src="https://placehold.co/500x500"
                   alt="mockup"
                 />
               </div>
-
-              {data.buttonTitle.length > 0 ? (
-                    <Link href={data.buttonLink}>
-                    <Button  rightIcon={<IoMdArrowRoundForward />} className="text-neutral-900" colorScheme="green" size="lg"  variant='solid'>
-                        {data.buttonTitle}
-                </Button>
-                </Link>
-            ): ('')}
             </>
           ) : (
             <>
               <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                 <img
-                  src="https://media.tenor.com/TKq6Fn71XPgAAAAd/seriously-seriously-cat.gif"
+                  src="https://placehold.co/500x500"
                   alt="mockup"
                 />
               </div>
+
               <div className="mr-auto place-self-center lg:col-span-7">
-              <div className="mr-auto place-self-center lg:col-span-7">
-                <div className={`max-w-3xl mb-4 text-5xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-7xl text-[${data.color}]`}>
+                <div className={`max-w-3xl mb-4 text-5xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-7xl`}
+                  style={{ color: `${data.color}`}}
+                >
                     {data.heading}
                 </div>
-                    <div className={`max-w-3xl mb-6 font-light text-[${data.color}] lg:mb-8 md:text-xl lg:text-2xl`}>
-                        {data.subHeading}
-                    </div>
-              </div>
+                <div className={`max-w-3xl mb-6 font-light text-[${data.color}] lg:mb-8 md:text-xl lg:text-2xl`}>
+                    {data.subHeading}
+                </div>
 
                 {data.buttonTitle.length > 0 ? (
                     <Link href={data.buttonLink}>
-                    <Button  rightIcon={<IoMdArrowRoundForward />} className="text-neutral-900" colorScheme="green" size="lg"  variant='solid'>
-                        {data.buttonTitle}
-                    </Button>
+                      <Button  rightIcon={<IoMdArrowRoundForward />} className="text-neutral-900" colorScheme="green" size="lg"  variant='solid'>
+                          {data.buttonTitle}
+                      </Button>
                     </Link>
                 ): ('')}
-              </div>
+              </div>      
             </>
           )}
         </div>

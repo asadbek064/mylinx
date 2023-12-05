@@ -26,7 +26,7 @@ const LandingHeroFull = () => {
                     </div>        
                 </div>
                 <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                    <img src="https://media.tenor.com/TKq6Fn71XPgAAAAd/seriously-seriously-cat.gif" alt="mockup" />
+                    <img src="https://placehold.co/600x500" alt="mockup" />
                 </div>                
             </div>
         </section>

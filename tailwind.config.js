@@ -24,6 +24,11 @@ module.exports = {
           DEFAULT: '#FFFFFF',
         },
       },
+
+      fontFamily: {
+        'coolvetica': ['Coolvetica Regular', 'sans-serif'],
+        'coolvetica-italic': ['Coolvetica Italic', 'sans-serif'],
+      }
     },
   },
 
