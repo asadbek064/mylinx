@@ -13,7 +13,7 @@ export const LANDING_FEATURES: FeatureHero[]  = [
     heroImage: "",
     bgColor: "#F87171",
     leftSide: false,
-    color: '#991B1B'
+    color: '#B91C1C'
   },
   {
     heading: "Analyze your audience and keep your followers engaged",

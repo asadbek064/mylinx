@@ -15,7 +15,6 @@ import LandingDemo from 'components/Landing/LandingDemo'
 import LandingHeroFull from 'components/Landing/LandingHeroFull'
 import FeatureHero from 'components/shared/FeatureHero'
 import { LANDING_FEATURES } from "consts/landingpage";
-import { features } from 'process'
 
 const Home = () => {
   useEffect(() => {

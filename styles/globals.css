@@ -3,23 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* fonts */
-@font-face {
-  font-family: 'Coolvetica Regular';
-  src: url('/fonts/coolvetica-regular.woff') format('woff');
-}
-@font-face {
-  font-family: 'Coolvetica Italic';
-  src: url('/fonts/coolvetica-italic.woff') format('woff');
-}
-
-
-@layer base {
-  body {
-    font-family: 'Cursive', sans-serif;
-  }
-}
-
 a {
   color: inherit;
   text-decoration: none;

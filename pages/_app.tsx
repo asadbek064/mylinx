@@ -1,7 +1,9 @@
 import 'styles/globals.css'
-import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react'
+import '@fontsource-variable/lexend';
 
+import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { TUser } from 'types/user'
@@ -12,6 +14,15 @@ type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout }
 
 export const UserContext = createContext({})
 export const MylinxProdContext = createContext({})
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'Lexend Variable', sans-serif`,
+    body: `'Lexend Variable', sans-serif`,
+  },
+  shadows: { outline: 'none' } 
+})
+
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page)
@@ -47,7 +58,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   }, [])
 
   return (
-    <ChakraProvider theme={extendTheme({ shadows: { outline: 'none' } })}>
+    <ChakraProvider theme={theme}>
       {getLayout(
         <UserContext.Provider value={{ user, setUser }}>
           <MylinxProdContext.Provider value={{ mylinxProd, setMylinxProd }}>
