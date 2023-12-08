@@ -10,17 +10,15 @@ const LandingHeroFull = () => {
                     <div className="flex space-x-4">
                         <input
                             type="text"
-                            className="border-1 outline-none
-                            bg-no-repeat border-1 border-solid border-gray-500 box-border h-13  pl-[6.5rem] w-72 block text-lg
-                            "
-                            placeholder="Your page"
+                            className="border-1 outline-none rounded-lg bg-no-repeat border-1 border-solid box-border h-13 pl-[5.95rem] w-72 block text-lg hover:border-neutral-400 border-2 active:border-spacing-1 border-[#000000] ease-in-out duration-100"
+                            placeholder="yourname"
                             style={{
-                                backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><text x="10" y="32" style="font: bold 17px Arial; fill:%23171717;">mylinx.cc /</text></svg>')`,
-                                backgroundRepeat: 'no-repeat',
-                            }}      
+                                backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><text x="10" y="30" style="font: bold 17px Arial; fill:%23262626;">mylinx.cc/</text></svg>')`,
+                                backgroundRepeat: 'no-repeat'
+                            }}
                         />
                         
-                        <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3  font-medium text-center text-lg text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 ">
+                        <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3  font-medium text-center text-lg text-white rounded-full bg-primary-600 hover:bg-primary-700  ease-in-out duration-100 focus:ring-4 focus:ring-primary-300 ">
                             Claim your Mylinx
                         </a>
                     </div>        
