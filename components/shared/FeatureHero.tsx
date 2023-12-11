@@ -1,6 +1,8 @@
-import { Button } from '@chakra-ui/react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import Link from 'next/link';
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { useEffect } from 'react';
 
 export interface FeatureHero {
   heading: string;
@@ -19,9 +21,44 @@ interface FeatureHeroProp {
 }
 
 const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
+  const controlsHeading = useAnimation();
+  const controlsSubHeading = useAnimation();
+  const controlsButton = useAnimation();
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controlsHeading.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' },
+      });
+      controlsSubHeading.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, delay: 0.2, ease: 'easeOut' },
+      });
+      controlsButton.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, delay: 0.4, ease: 'easeOut' },
+      });
+    }
+  }, [controlsHeading, controlsSubHeading, controlsButton, inView]);
+  
   return (
-    <>
-      <div style={{ backgroundColor: data.bgColor }} className="py-36">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      className="py-16"
+      style={{ backgroundColor: data.bgColor }}
+    >
+      <div style={{ backgroundColor: data.bgColor }} className="py-16">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           {data.leftSide ? (
             <>
@@ -82,7 +119,7 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
           )}
         </div>
       </div>
-    </>
+      </motion.div>
   )
 }
 

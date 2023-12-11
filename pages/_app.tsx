@@ -8,6 +8,7 @@ import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { TUser } from 'types/user'
 import { initializePostHog } from 'lib/posthog'
+import Navbar from 'components/partials/Navbar';
 
 type NextPageWithLayout = NextPage & { getLayout?: (page: ReactElement) => ReactNode }
 type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout }

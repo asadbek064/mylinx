@@ -1,7 +1,7 @@
 const LandingHeroFull = () => {
     return (
        <>
-    <section className="bg-white dark:bg-gray-900 py-12">
+    <section className="bg-white dark:bg-gray-900 py-24">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div className="mr-auto place-self-center lg:col-span-7">
                 <div className="max-w-3xl mb-4 font-extrabold tracking-tight leading-none [font-size:var(--step-5)] md:[font-size:var(--step-7)] text-primary-500">
@@ -34,7 +34,7 @@ const LandingHeroFull = () => {
                     </div>
                 </div>        
             </div>
-            <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <div className="ml- hidden lg:mt-0 lg:col-span-5 lg:flex">
                 <img src="https://placehold.co/600x500" alt="mockup" />
             </div>                
         </div>
