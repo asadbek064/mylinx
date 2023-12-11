@@ -9,31 +9,34 @@ export const LANDING_FEATURES: FeatureHero[]  = [
     heading: "Create and customize your Mylinx in minutes",
     subHeading: "Combine your TikTok, Instagram, Twitter, website, store, videos, music, podcast, events, and more into one bio link page, crafted to boost conversions.",
     buttonTitle: "Get started for free",
-    buttonLink: "/",
+    buttonLink: "/#",
     heroImage: "",
     bgColor: "#F87171",
     leftSide: false,
-    color: '#B91C1C'
+    color: '#B91C1C',
+    buttonColor: "primary"
   },
   {
     heading: "Analyze your audience and keep your followers engaged",
     subHeading: "Charts and Graphs. No 3rd parties needed. Page Views, Traffic Sources, Link Clicks, Etc.",
     buttonTitle: "Get your link",
-    buttonLink: "/",
+    buttonLink: "/#",
     heroImage: "",
     bgColor: "#FFFFFF",
     leftSide: true,
-    color: '#111111'
+    color: '#111111',
+    buttonColor: "red"
   },
   {
     heading: "Combine your content. F*ck the algorithm. Get paid.",
     subHeading: "It's time for your content to be noticed.",
     buttonTitle: "",
-    buttonLink: "/",
+    buttonLink: "/#",
     heroImage: "",
     bgColor: "#84CC16",
     leftSide: false,
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    buttonColor: "blue"
   }
 ]
 export const LANDING_ANALYITCS = {

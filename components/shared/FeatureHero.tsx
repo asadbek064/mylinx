@@ -11,6 +11,7 @@ export interface FeatureHero {
   bgColor: string;
   color: string;
   leftSide: boolean;
+  buttonColor: string;
 }
 
 interface FeatureHeroProp {
@@ -20,28 +21,29 @@ interface FeatureHeroProp {
 const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
   return (
     <>
-      <div style={{ backgroundColor: data.bgColor }} className="py-12">
+      <div style={{ backgroundColor: data.bgColor }} className="py-36">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           {data.leftSide ? (
             <>
-              <div className="mr-auto place-self-center lg:col-span-7">
-                <div className={`max-w-3xl mb-4 text-5xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-7xl text-[${data.color}]`}>
+              <div className="md:mr-12  place-self-center lg:col-span-7">
+                <div className={`max-w-2xl mb-4 font-extrabold tracking-tight leading-tight [font-size:var(--step-4)] md:[font-size:var(--step-5)]  text-[${data.color}]`}>
                     {data.heading}
                 </div>
-                <div className={`max-w-3xl mb-6 font-light text-[${data.color}] lg:mb-8 md:text-xl lg:text-2xl`}>
+                <div className={`max-w-2xl mb-6 font-light text-[${data.color}] lg:mb-8 [font-size:var(--step--1)] md:[font-size:var(--step-1)] font-normal`}>
                     {data.subHeading}
                 </div>
 
                 {data.buttonTitle.length > 0 ? (
-                    <Link href={data.buttonLink}>
-                      <Button  rightIcon={<IoMdArrowRoundForward />} className="text-neutral-900" colorScheme="green" size="lg"  variant='solid'>
-                          {data.buttonTitle}
-                      </Button>
+                   <Link href={data.buttonLink}>
+                      <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-${data.buttonColor}-600 hover:bg-${data.buttonColor}-500 ease-in-out duration-100 focus:ring-4 focus:ring-primary-300`}>
+                        {data.buttonTitle}
+                      </div>
                     </Link>
+                   
                 ): ('')}
               </div>
 
-              <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+              <div className="hidden lg:mt-0 lg:col-span-4 lg:flex">
                 <img
                   src="https://placehold.co/500x500"
                   alt="mockup"
@@ -50,31 +52,32 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
             </>
           ) : (
             <>
-              <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+              <div className="hidden lg:mt-0 lg:col-span-4 lg:flex">
                 <img
                   src="https://placehold.co/500x500"
                   alt="mockup"
                 />
               </div>
-
-              <div className="mr-auto place-self-center lg:col-span-7">
-                <div className={`max-w-3xl mb-4 text-5xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-7xl`}
-                  style={{ color: `${data.color}`}}
-                >
+            
+              <div className="md:ml-12 place-self-center lg:col-span-7">
+                <div className={`max-w-2xl mb-4 font-extrabold tracking-tight leading-tight [font-size:var(--step-4)] md:[font-size:var(--step-5)]  text-[${data.color}]`}>
                     {data.heading}
                 </div>
-                <div className={`max-w-3xl mb-6 font-light text-[${data.color}] lg:mb-8 md:text-xl lg:text-2xl`}>
+                <div className={`max-w-2xl mb-6 font-light text-[${data.color}] lg:mb-8 [font-size:var(--step--1)] md:[font-size:var(--step-1)] font-normal`}>
                     {data.subHeading}
                 </div>
 
                 {data.buttonTitle.length > 0 ? (
-                    <Link href={data.buttonLink}>
-                      <Button  rightIcon={<IoMdArrowRoundForward />} className="text-neutral-900" colorScheme="green" size="lg"  variant='solid'>
-                          {data.buttonTitle}
-                      </Button>
+                   <Link href={data.buttonLink}>
+                      <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-${data.buttonColor}-600 hover:bg-${data.buttonColor}-500 ease-in-out duration-100 focus:ring-4 focus:ring-primary-300`}>
+                        {data.buttonTitle}
+                      </div>
                     </Link>
+                   
                 ): ('')}
-              </div>      
+              </div>
+
+    
             </>
           )}
         </div>
@@ -84,3 +87,4 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
 }
 
 export default FeatureHero
+
