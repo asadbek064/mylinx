@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import Script from 'next/script';
 
 import {
   Button,
@@ -11,6 +12,7 @@ import {
   Center,
   useToast,
   Link,
+  background,
 } from '@chakra-ui/react'
 import { debounce } from 'lodash'
 import { signIn } from 'next-auth/react'
@@ -104,29 +106,12 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
   return (
     <>
       <NextSeo title={`${isLogin ? 'Log in' : 'Sign up'} | mylinx`} />
-
+      
       <Center px={{ base: 5, md: 8 }} pt={{ base: '7rem', md: '15rem' }}>
-        <Box pos="absolute" top="0" left="0" px={{ base: 0, md: 8 }} py={4} cursor="pointer">
-          <a href="/">
-            <HStack
-              _hover={{ background: 'gray.100' }}
-              rounded="full"
-              p={2}
-              px={4}
-              transitionDuration="300ms"
-            >
-              <IoIosArrowBack color="#374051" />
-              <Text fontSize="md" fontWeight="bold" color="gray.700">
-                Home
-              </Text>
-            </HStack>
-          </a>
-        </Box>
+
+        <div className="w-full bg-cover bg-center absolute z-20" id="fog-wp"></div>
 
         <VStack spacing={6} w="35rem" align="left">
-          <Box w="full" h="3rem">
-            <Image src="/logo.png" width={48} height={48} alt="mylinx Logo" priority={true} />
-          </Box>
           <VStack spacing={1} align="left">
             <Heading fontSize={{ base: '3xl', md: '4xl' }} color="black">
               {isLogin ? 'Log in to mylinx' : 'Create a mylinx'}
@@ -154,15 +139,15 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
               onKeyDown={(e) => {
                 if (e.key === 'Enter') authEmail()
               }}
-              placeholder="nikola.tesla@example.com"
+              placeholder="hermanmillar@example.com"
             />
             <Button
-              w="full"
+              style={{backgroundColor: "#22c55e"}}
+               w="full"
               textColor="white"
               _hover={isValid !== false && !emailLoading ? { opacity: 0.8 } : {}}
               _active={isValid !== false && !emailLoading ? { opacity: 0.5 } : {}}
               transition="0.3s"
-              bg="purple.600"
               onClick={authEmail}
               isLoading={emailLoading}
               isDisabled={isValid === null ? false : isValid === false ? true : false}

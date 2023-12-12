@@ -8,7 +8,8 @@ import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { TUser } from 'types/user'
 import { initializePostHog } from 'lib/posthog'
-import Navbar from 'components/partials/Navbar';
+import BaseLayout from 'components/layout/BaseLayout';
+import React from 'react';
 
 type NextPageWithLayout = NextPage & { getLayout?: (page: ReactElement) => ReactNode }
 type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout }
@@ -26,8 +27,10 @@ const theme = extendTheme({
 
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? ((page) => page)
-
+  const getLayout =
+    // @ts-ignore
+    Component.getLayout || ((page) => <BaseLayout>{page}</BaseLayout>);
+    
   const [user, setUser] = useState<TUser | null>(null)
   const [mylinxProd, setMylinxProd] = useState<TUser | null>(null)
 
@@ -58,16 +61,20 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     initializePostHog()
   }, [])
 
+  
+
   return (
-    <ChakraProvider theme={theme}>
-      {getLayout(
-        <UserContext.Provider value={{ user, setUser }}>
-          <MylinxProdContext.Provider value={{ mylinxProd, setMylinxProd }}>
-            <Component {...pageProps} />
-          </MylinxProdContext.Provider>
-        </UserContext.Provider>
-      )}
-    </ChakraProvider>
+    <React.Fragment>
+      <ChakraProvider theme={theme}>
+        {getLayout(
+          <UserContext.Provider value={{ user, setUser }}>
+            <MylinxProdContext.Provider value={{ mylinxProd, setMylinxProd }}>
+              <Component {...pageProps} />
+            </MylinxProdContext.Provider>
+          </UserContext.Provider>
+        )}
+      </ChakraProvider>
+    </React.Fragment>
   )
 }
 

@@ -9,7 +9,7 @@ const ErrorPage = ({ code, message }: ErrorPageProps) => {
   return (
     <VStack bg="white" h="100vh" justifyContent="center" px={{ base: 4, md: 44 }}>
       <VStack py={12} rounded="2xl" textAlign="center">
-        <Heading textDecor="underline #6B46C1 6px" fontSize={{ base: '5xl', md: '6xl' }}>
+        <Heading textDecor="underline #22c55e 6px" fontSize={{ base: '5xl', md: '6xl' }}>
           {code} Error
         </Heading>
 
