@@ -31,6 +31,7 @@
 
 - Clone the [mylinx repo](httsp://github.com/asadbek064/mylinx) and run `npm install`
 - Follow the `.env.example` file to create your own `.env` file
+- Database required [Neon](https://neon.tech/) 
 - Set up your database by running `npx prisma migrate dev --name init` and `npx prisma generate`
 - Run `npm run dev` to start the development server
 
