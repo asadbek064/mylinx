@@ -1,7 +1,7 @@
 import { Device } from 'types/utils'
 
 export const getBaseURL = (host?: string) => {
-  if (!host || host.includes('vercel.app')) {
+  if (!host || host.includes('mylinx.cc')) {
     if (!process.env.NEXT_PUBLIC_VERCEL_URL) return 'https://mylinx.cc'
 
     if (process.env.NEXT_PUBLIC_VERCEL_URL.includes('localhost')) {
