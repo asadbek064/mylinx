@@ -1,6 +1,5 @@
 import { CUSTOM_DOMAINS, HOSTS } from 'consts/middleware'
 import { NextRequest, NextResponse } from 'next/server'
-import { getBaseURL } from 'lib/utils'
 
 async function middleware(request: NextRequest) {
   
@@ -15,7 +14,7 @@ async function middleware(request: NextRequest) {
   if (!hostname) return NextResponse.redirect('https://mylinx.cc')
 
   // get our base url [https://mylinx.cc]
-  const BASE_URL = getBaseURL(hostname)
+  const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
 
   // if the domain is a customdomain, and it's root path, redirect to mylinx.cc
   if (CUSTOM_DOMAINS.includes(hostname) && pathname === '/') {
