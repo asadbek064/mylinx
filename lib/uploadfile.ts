@@ -11,10 +11,8 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
     const formData = new FormData();
     formData.append('file', file);
 
-    const serverURL =  process.env.NODE_ENV === "development" ? 'http://127.0.0.1:3002' : 'https://server.mylinx.cc' 
-
     //@ts-ignore
-    const upload = await fetch(`${serverURL}/upload/image`, {
+    const upload = await fetch(`http://127.0.0.1:3002/upload/image`, {
       method: 'POST',
       body: formData as unknown as URLSearchParams, 
     });
