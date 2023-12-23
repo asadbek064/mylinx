@@ -11,9 +11,10 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
     const formData = new FormData();
     formData.append('file', file);
 
+    //@ts-ignore
     const upload = await fetch(`http://127.0.0.1:3002/upload/image`, {
       method: 'POST',
-      body: formData,
+      body: formData as unknown as URLSearchParams, 
     });
 
     if (!upload.ok) {

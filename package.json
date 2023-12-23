@@ -27,6 +27,7 @@
     "crypto-hash": "^3.0.0",
     "date-fns": "^2.30.0",
     "emoji-mart": "^5.2.2",
+    "formdata-node": "^6.0.3",
     "formidable": "^3.5.1",
     "framer-motion": "^4.1.17",
     "image-type": "^5.2.0",

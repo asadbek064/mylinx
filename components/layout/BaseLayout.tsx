@@ -18,7 +18,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
   
   return (
     <main>
-      { (path != undefined && path !== "/edit/links") && <Navbar /> }
+      { (path != undefined && path !== "/edit") && <Navbar /> }
 
       <div className="app">{children}</div>
 
