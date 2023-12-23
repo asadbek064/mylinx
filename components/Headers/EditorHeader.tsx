@@ -40,13 +40,13 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
 
   const publishMylinx = async () => {
     setSaveState('saving')
-    await fetch('/api/publishkyte')
+    await fetch('/api/publishmylinx')
     setSaveState('saved')
     toast({ title: 'Mylinx published!', status: 'success', duration: 3000 })
   }
 
   const autoSave = async (userData: TUser) => {
-    await fetch('/api/updatekyte', {
+    await fetch('/api/updatemylinx', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -98,13 +98,6 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
       >
         <Container maxW="container.2xl" px={{ base: 4, md: 12 }}>
           <SimpleGrid columns={3} w="full" alignItems="center">
-            <Image
-              boxSize="2rem"
-              cursor="pointer"
-              src="/logo.png"
-              alt="mylinx Logo"
-              onClick={() => router.push('/')}
-            />
             <Spacer />
             <HStack spacing={{ base: 4, md: 6 }} justifyContent="flex-end">
               <HStack spacing={1}>

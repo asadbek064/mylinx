@@ -31,7 +31,7 @@ const Home = () => {
 
        <div className='flex flex-col'>
         {LANDING_FEATURES.map((feature, index) => (
-          <FeatureHero key={index} data={feature} />
+          <FeatureHero key={index+1} data={feature} />
         ))}
       </div>
 

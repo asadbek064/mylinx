@@ -47,7 +47,7 @@ const GetStartedModal = ({ modalOpen, setModalOpen, user, setUser }: GetStartedM
       return
     }
 
-    await fetch('/api/publishkyte')
+    await fetch('/api/publishmylinx')
 
     setTimeout(() => {
       setSaving(false)
