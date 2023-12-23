@@ -1,36 +1,45 @@
 type UploadFileResponse = {
-  error?: string
-  imageURL?: string
-  blurpfp?: string
-}
+  error?: string | unknown;
+  imageURL?: string;
+  blurpfp?: string;
+};
+
+import fetch from 'node-fetch';
 
 export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFileResponse> {
-  const getuploadurl = await fetch('/api/images/getuploadurl')
-  const response = await getuploadurl.json();
-  console.log(response);
-  
-  const uploadURL = response.uploadURL;
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
 
-  const formData = new FormData()
-  formData.append('file', file)
+    const upload = await fetch(`http://127.0.0.1:3002/upload/image`, {
+      method: 'POST',
+      body: formData,
+    });
 
-  const upload = await fetch(uploadURL, { method: 'POST', body: formData })
-  const uploadResponse = await upload.json()
-  if (!uploadResponse.success) return { error: uploadResponse.errors[0].message }
+    if (!upload.ok) {
+      throw new Error('Failed to upload file');
+    }
 
-  const imageURL = uploadResponse.result.variants[0]
+    const uploadResponse = await upload.json();
+    const imageURL = `https://photos.mylinx.cc/${uploadResponse.fileId}`;
 
-  if (!isPfp) return { imageURL: imageURL }
+    if (!isPfp) return { imageURL };
 
-  const createblurpfp = await fetch('/api/images/createblurpfp', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ imageurl: imageURL }),
-  })
+    const createblurpfp = await fetch('/api/images/createblurpfp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ imageurl: imageURL }),
+    });
 
-  const { blurpfp } = await createblurpfp.json()
+    if (!createblurpfp.ok) {
+      throw new Error('Failed to create blurpfp');
+    }
 
-  return { imageURL: imageURL, blurpfp: blurpfp }
+    const { blurpfp } = await createblurpfp.json();
+    return { imageURL, blurpfp };
+  } catch (error: any) {
+    return { error: error.message };
+  }
 }

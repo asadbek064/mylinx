@@ -3,13 +3,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getBaseURL } from 'lib/utils'
 
 async function middleware(request: NextRequest) {
+  
   // clone the request url
   const url = request.nextUrl.clone()
 
   // get pathname of request [/cool]
   const { pathname } = request.nextUrl
 
-  // get host name [aleem.com]
+  // get host name [asadbek.dev]
   const hostname = request.headers.get('host')
   if (!hostname) return NextResponse.redirect('https://mylinx.cc')
 
