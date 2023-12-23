@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-
 import { getPublishedMylinxFromId, getUserFromSession } from 'controllers/getuser'
-import { TUser } from 'types/user'
+import { NextApiRequest, NextApiResponse } from 'next';
+import { TUser } from 'types/user';
 
 type GetUserRes = {
   user?: TUser
