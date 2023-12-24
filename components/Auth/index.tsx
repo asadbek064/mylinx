@@ -161,7 +161,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
             <Box bg="gray.300" w="full" h="1px" />
           </HStack>
 
-          {/* <VStack spacing={3}>
+          <VStack spacing={3}>
             {PROVIDERS.map((item, i) => (
               <Button
                 key={i}
@@ -177,7 +177,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
                 <Text pl={2}> Continue with {item.name}</Text>
               </Button>
             ))}
-          </VStack> */}
+          </VStack>
           <Text fontSize="sm" color="gray.500">
             By continuing, you agree to mylinx's{' '}
             <Link href="/tos.pdf" color="blue.500">
