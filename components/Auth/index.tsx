@@ -17,7 +17,6 @@ import {
 import { debounce } from 'lodash'
 import { signIn } from 'next-auth/react'
 
-import { getBaseURL } from 'lib/utils'
 import { IoIosArrowBack } from 'react-icons/io'
 import { FaArrowRight, FaGithub, FaGoogle } from 'react-icons/fa'
 import { NextSeo } from 'next-seo'
@@ -60,7 +59,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
   }
 
   const authSocial = async (provider: string) => {
-    const BASE_URL = getBaseURL(window.location.hostname)
+    const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
 
     if (provider === 'google') setGoogleLoading(true)
     if (provider === 'github') setGithubLoading(true)
@@ -78,7 +77,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
   }
 
   const authEmail = async () => {
-    const BASE_URL = getBaseURL(window.location.hostname)
+    const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL;
 
     setEmailLoading(true)
 

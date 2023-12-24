@@ -109,7 +109,7 @@ const SelectUsername = ({
           }}
           borderColor={isValid === null ? 'gray.300' : isValid ? 'green.600' : 'red.500'}
           transitionDuration="350ms"
-          placeholder="logan"
+          placeholder="marcus"
           value={username}
           onChange={(e) => {
             setUsername(e.target.value)
