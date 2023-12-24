@@ -6,7 +6,7 @@ import { TIcon, FaIconKey } from 'types/user'
 import ICON_OPTIONS from 'consts/icons'
 import { THEMES } from 'consts/themes'
 import DynamicIcon from 'components/DynamicIcon'
-import { getDeviceType } from 'lib/utils'
+import { getDeviceType, getBaseURL } from 'lib/utils'
 
 type LinksProps = { icon: TIcon; theme: string; userId: string; isPreview?: boolean }
 
@@ -18,7 +18,7 @@ const Icon = ({ icon, theme, userId, isPreview }: LinksProps) => {
     if (isPreview) return
     e.preventDefault()
 
-    const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL;
+    const BASE_URL = getBaseURL(window.location.hostname)
 
     fetch(BASE_URL + '/api/analytics/hitlink', {
       method: 'POST',

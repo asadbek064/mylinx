@@ -6,6 +6,7 @@ import { TLink, TUser } from 'types/user'
 import { THEMES } from 'consts/themes'
 import DynamicIcon from 'components/DynamicIcon'
 import { getDeviceType } from 'lib/utils'
+import { getBaseURL } from 'lib/utils'
 
 type LinksProps = { user: TUser; link: TLink; isPreview?: boolean }
 
@@ -18,7 +19,7 @@ const Link = ({ user, link, isPreview }: LinksProps) => {
     e.preventDefault()
     if (isPreview) return
 
-    const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL;
+    const BASE_URL = getBaseURL(window.location.hostname)
 
     fetch(BASE_URL + '/api/analytics/hitlink', {
       method: 'POST',

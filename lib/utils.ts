@@ -1,5 +1,20 @@
 import { Device } from 'types/utils'
 
+export const getBaseURL = (host?: string) => {
+  if (!host || host.includes('mylinx.cc')) {
+    if (!process.env.NEXT_PUBLIC_VERCEL_URL) return 'https://mylinx.cc'
+
+    if (process.env.NEXT_PUBLIC_VERCEL_URL.includes('localhost')) {
+      return 'http://localhost:3000'
+    }
+
+    return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  }
+
+  if (host.includes('localhost')) return 'http://localhost:3000'
+  return `https://${host}`
+}
+
 export const getDeviceType = (userAgent?: string): Device => {
   let deviceType = Device.UNKNOWN
 
