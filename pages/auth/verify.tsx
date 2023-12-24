@@ -35,7 +35,7 @@ const Verify = () => {
             We sent you an email!
           </Heading>
           <Text fontSize={{ base: 'sm', md: '2xl' }} color="gray.700">
-            Check your inbox for an email from <Link color="blue.500">auth@mail.mylinx.cc</Link>{' '}
+            Check your inbox for an email from <Link color="blue.500">auth@mylinx.cc</Link>{' '}
             and click on the verification link. If you can't find the email, it might be in your spam folder. :)
           </Text>
         </VStack>

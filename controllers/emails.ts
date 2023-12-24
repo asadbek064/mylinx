@@ -4,7 +4,7 @@
 // 3. don't send any emails at all (rm email option in /components/auth)
 
 const TRANSACTIONAL_URL = 'https://app.loops.so/api/v1/transactional'
-const LOOPS_API_KEY = process.env.LOOPS_API_KEY
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
 
 export const sendMagicLink = async (email: string, link: string) => {
   const TRANSACTIONAL_ID = 'cllzh85eg01b9k30pww3y5giy'
@@ -12,7 +12,7 @@ export const sendMagicLink = async (email: string, link: string) => {
   await fetch(TRANSACTIONAL_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${LOOPS_API_KEY}`,
+      Authorization: `Bearer ${SENDGRID_API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
