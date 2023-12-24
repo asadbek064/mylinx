@@ -17,4 +17,5 @@ const getuser = async (req: NextApiRequest, res: NextApiResponse<GetUserRes>): P
   return res.status(200).json({ user, publishedMylinx })
 }
 
+
 export default getuser
