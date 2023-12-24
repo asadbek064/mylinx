@@ -113,7 +113,7 @@ export const authOptions: NextAuthOptions = {
         },
       })
 
-      const kyteUser = await prisma.mylinxProd
+      const mylinxUser = await prisma.mylinxProd
         .create({
           data: {
             userId: user.id,
@@ -124,7 +124,7 @@ export const authOptions: NextAuthOptions = {
 
       trackServerEvent({
         event: PosthogEvents.CREATED_ACCOUNT,
-        user: kyteUser,
+        user: mylinxUser,
       })
     },
   },
