@@ -6,7 +6,7 @@ import { trackServerEvent } from 'lib/posthog'
 import { PosthogEvents } from 'consts/posthog'
 
 type TPageHit = {
-  kyteId: string
+  mylinxId: string
   username: string
   referrer?: string
   ip?: string
@@ -14,7 +14,7 @@ type TPageHit = {
 }
 
 type TLinkHit = {
-  kyteId: string
+  mylinxId: string
   linkURL: string
   linkTitle: string
   referrer?: string
@@ -22,16 +22,16 @@ type TLinkHit = {
   device?: Device
 }
 
-export const AddPageHit = async ({ kyteId, username, referrer, ip, device }: TPageHit) => {
+export const AddPageHit = async ({ mylinxId, username, referrer, ip, device }: TPageHit) => {
   console.log('ADDDING page hit')
-  console.log('kyteId:', kyteId)
+  console.log('mylinxId:', mylinxId)
   console.log('referrer:', referrer)
   console.log('ip:', ip)
   console.log('device:', device)
 
   prisma.hitPage
     .create({
-      data: { kyteId, referrer: referrer || '', ip: ip || '', device: device || Device.UNKNOWN },
+      data: { mylinxId, referrer: referrer || '', ip: ip || '', device: device || Device.UNKNOWN },
     })
     .then((pageHit) => {
       console.log('Page hit added:', pageHit)
@@ -43,12 +43,12 @@ export const AddPageHit = async ({ kyteId, username, referrer, ip, device }: TPa
   trackServerEvent({
     event: PosthogEvents.KYTE_PAGE_HIT,
     id: ip,
-    properties: { kyteId, referrer, ip, device, username },
+    properties: { mylinxId, referrer, ip, device, username },
   })
 }
 
 export const AddLinkHit = async ({
-  kyteId,
+  mylinxId,
   referrer,
   ip,
   device,
@@ -57,7 +57,7 @@ export const AddLinkHit = async ({
 }: TLinkHit) => {
   const linkHit = await prisma.hitLink.create({
     data: {
-      kyteId,
+      mylinxId,
       referrer,
       ip,
       device,
@@ -72,10 +72,10 @@ export const AddLinkHit = async ({
 }
 
 export type GetPageHitsReturnData = number
-export const GetPageHits = async (kyteId: string) => {
+export const GetPageHits = async (mylinxId: string) => {
   const pageHits = await prisma.hitPage.count({
     where: {
-      kyteId,
+      mylinxId,
     },
   })
 
@@ -86,12 +86,12 @@ export const GetPageHits = async (kyteId: string) => {
 
 // this is a bit yucky, try to type it better
 export type GetTimeSeriesDataReturnData = Array<{ date: string; views: number }>
-export const GetTimeSeriesData = async (kyteId: string) => {
+export const GetTimeSeriesData = async (mylinxId: string) => {
   const thirtyDaysAgo = addDays(new Date(), -30)
 
   const rawTimeSeriesData = await prisma.hitPage.groupBy({
     by: ['timestamp'],
-    where: { kyteId, timestamp: { gte: thirtyDaysAgo } },
+    where: { mylinxId, timestamp: { gte: thirtyDaysAgo } },
     _count: { timestamp: true },
     orderBy: { timestamp: 'asc' },
   })
@@ -129,11 +129,11 @@ export const GetTimeSeriesData = async (kyteId: string) => {
 }
 
 export type GetLinkHitsReturnData = Array<{ url: string; title: string; count: number }>
-export const GetLinkHits = async (kyteId: string): Promise<GetLinkHitsReturnData> => {
+export const GetLinkHits = async (mylinxId: string): Promise<GetLinkHitsReturnData> => {
   const linkHits = await prisma.hitLink.groupBy({
     by: ['linkURL', 'linkTitle'],
     where: {
-      kyteId,
+      mylinxId,
     },
     _count: {
       linkURL: true,
@@ -152,12 +152,12 @@ export const GetLinkHits = async (kyteId: string): Promise<GetLinkHitsReturnData
 }
 
 export type GetCountryHitsReturnData = Array<{ country: string; count: number }>
-export const GetCountryHits = async (kyteId: string): Promise<GetCountryHitsReturnData> => {
+export const GetCountryHits = async (mylinxId: string): Promise<GetCountryHitsReturnData> => {
   // return array of how many times each country hit the page
   const countryHits = await prisma.hitPage.groupBy({
     by: ['country'],
     where: {
-      kyteId,
+      mylinxId,
     },
     _count: {
       country: true,
@@ -175,12 +175,12 @@ export const GetCountryHits = async (kyteId: string): Promise<GetCountryHitsRetu
 }
 
 export type GetTrafficSourcesReturnData = Array<{ referrer: string; count: number }>
-export const GetTrafficSources = async (kyteId: string): Promise<GetTrafficSourcesReturnData> => {
+export const GetTrafficSources = async (mylinxId: string): Promise<GetTrafficSourcesReturnData> => {
   // return array of how many times each country hit the page
   const trafficSources = await prisma.hitPage.groupBy({
     by: ['referrer'],
     where: {
-      kyteId,
+      mylinxId,
     },
     _count: {
       referrer: true,
@@ -203,12 +203,12 @@ export const GetTrafficSources = async (kyteId: string): Promise<GetTrafficSourc
 }
 
 export type GetDeviceHitsReturnData = Array<{ device: Device; count: number }>
-export const GetDeviceHits = async (kyteId: string): Promise<GetDeviceHitsReturnData> => {
+export const GetDeviceHits = async (mylinxId: string): Promise<GetDeviceHitsReturnData> => {
   // return array of how many times each device hit the page
   const deviceHits = await prisma.hitPage.groupBy({
     by: ['device'],
     where: {
-      kyteId,
+      mylinxId,
     },
     _count: {
       device: true,

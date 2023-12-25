@@ -13,7 +13,7 @@ DROP TABLE "MylinxHit";
 -- CreateTable
 CREATE TABLE "MylinxView" (
     "id" TEXT NOT NULL,
-    "kyteId" TEXT NOT NULL,
+    "mylinxId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "referrer" TEXT,
     "country" TEXT,
@@ -24,4 +24,4 @@ CREATE TABLE "MylinxView" (
 );
 
 -- AddForeignKey
-ALTER TABLE "MylinxView" ADD CONSTRAINT "MylinxView_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MylinxView" ADD CONSTRAINT "MylinxView_kyteId_fkey" FOREIGN KEY ("mylinxId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;

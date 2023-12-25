@@ -20,7 +20,7 @@ DROP TABLE "MylinxViewLink";
 -- CreateTable
 CREATE TABLE "HitLink" (
     "id" TEXT NOT NULL,
-    "kyteId" TEXT NOT NULL,
+    "mylinxId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "referrer" TEXT,
     "country" TEXT,
@@ -33,7 +33,7 @@ CREATE TABLE "HitLink" (
 -- CreateTable
 CREATE TABLE "HitPage" (
     "id" TEXT NOT NULL,
-    "kyteId" TEXT NOT NULL,
+    "mylinxId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "referrer" TEXT,
     "country" TEXT,
@@ -45,7 +45,7 @@ CREATE TABLE "HitPage" (
 );
 
 -- AddForeignKey
-ALTER TABLE "HitLink" ADD CONSTRAINT "HitLink_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "HitLink" ADD CONSTRAINT "HitLink_kyteId_fkey" FOREIGN KEY ("mylinxId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "HitPage" ADD CONSTRAINT "HitPage_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "HitPage" ADD CONSTRAINT "HitPage_kyteId_fkey" FOREIGN KEY ("mylinxId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;

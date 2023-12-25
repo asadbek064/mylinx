@@ -23,7 +23,7 @@ CREATE TABLE "Domains" (
 -- CreateTable
 CREATE TABLE "MylinxHit" (
     "id" TEXT NOT NULL,
-    "kyteId" TEXT NOT NULL,
+    "mylinxId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "referrer" TEXT,
     "country" TEXT,
@@ -36,7 +36,7 @@ CREATE TABLE "MylinxHit" (
 -- CreateTable
 CREATE TABLE "LinkHit" (
     "id" TEXT NOT NULL,
-    "kyteId" TEXT NOT NULL,
+    "mylinxId" TEXT NOT NULL,
     "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "referrer" TEXT,
     "country" TEXT,
@@ -54,7 +54,7 @@ CREATE UNIQUE INDEX "Domains_domain_key" ON "Domains"("domain");
 ALTER TABLE "Domains" ADD CONSTRAINT "Domains_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "MylinxHit" ADD CONSTRAINT "MylinxHit_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MylinxHit" ADD CONSTRAINT "MylinxHit_kyteId_fkey" FOREIGN KEY ("mylinxId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "LinkHit" ADD CONSTRAINT "LinkHit_kyteId_fkey" FOREIGN KEY ("kyteId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "LinkHit" ADD CONSTRAINT "LinkHit_kyteId_fkey" FOREIGN KEY ("mylinxId") REFERENCES "MylinxProd"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;

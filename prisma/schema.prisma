@@ -18,18 +18,18 @@ model Domains {
 
 model HitPage {
   id        String   @id @default(cuid())
-  kyteId    String
+  mylinxId    String
   timestamp DateTime @default(now())
   referrer  String?
   country   String?
   ip        String?
   device    Device?
-  MylinxProd  MylinxProd @relation(fields: [kyteId], references: [userId], onDelete: Cascade)
+  MylinxProd  MylinxProd @relation(fields: [mylinxId], references: [userId], onDelete: Cascade)
 }
 
 model HitLink {
   id        String   @id @default(cuid())
-  kyteId    String
+  mylinxId    String
   timestamp DateTime @default(now())
   referrer  String?
   country   String?
@@ -37,7 +37,7 @@ model HitLink {
   device    Device?
   linkTitle String?
   linkURL   String?
-  MylinxProd  MylinxProd @relation(fields: [kyteId], references: [userId], onDelete: Cascade)
+  MylinxProd  MylinxProd @relation(fields: [mylinxId], references: [userId], onDelete: Cascade)
 }
 
 model MylinxDraft {

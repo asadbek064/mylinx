@@ -91,8 +91,8 @@ const AddIcon = ({ user, setSelectedIcon, closeModal }: AddIconModalProps) => {
       </ModalBody>
       <ModalFooter p={0}>
         <Button
-          bgGradient="linear(to-l, blue.500, purple.500)"
-          transitionDuration="500ms"
+          bgGradient="linear(to-r, green.300, green.700)"
+          transitionDuration="300ms"
           _active={{ opacity: 0.8 }}
           py={3}
           _hover={{ opacity: 0.9 }}

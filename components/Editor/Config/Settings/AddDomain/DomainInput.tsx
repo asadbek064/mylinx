@@ -56,7 +56,7 @@ const DomainInput = ({ user, setUser, domain, setDomain, setAddingDomain }: Doma
       <InputGroup w="full" size="sm">
         <InputLeftAddon children="https://" />
         <Input
-          placeholder="aleem.com"
+          placeholder="asadbek.dev"
           _focus={{ boxShadow: 'none' }}
           onChange={(e) => setInput(e.target.value.toLowerCase())}
           onKeyDown={(e) => {

@@ -83,7 +83,7 @@ const DangerZone = ({ user, setUser }: DangerProps) => {
                 placeholder="arib@musicfy.lol"
               />
               <Button
-                colorScheme="blue"
+                colorScheme="green"
                 onClick={handleChangeEmail}
                 isDisabled={isValid === null ? false : isValid === false ? true : false}
                 _hover={isValid !== false ? { opacity: 0.8 } : {}}

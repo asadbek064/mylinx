@@ -31,21 +31,21 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<AnalyticAPIRetu
   const { user } = await getUserFromNextAuth(req, res)
   if (!user) return res.status(400).json({ error: 'No user found' })
 
-  const kyteId = user.id
+  const mylinxId = user.id
 
-  console.log('/api/analytics/getdata hit for:', kyteId)
+  console.log('/api/analytics/getdata hit for:', mylinxId)
 
-  const totalHits = await GetPageHits(kyteId)
+  const totalHits = await GetPageHits(mylinxId)
 
-  const topLinks = await GetLinkHits(kyteId)
+  const topLinks = await GetLinkHits(mylinxId)
 
-  const topCountries = await GetCountryHits(kyteId)
+  const topCountries = await GetCountryHits(mylinxId)
 
-  const topDevices = await GetDeviceHits(kyteId)
+  const topDevices = await GetDeviceHits(mylinxId)
 
-  const topTrafficSources = await GetTrafficSources(kyteId)
+  const topTrafficSources = await GetTrafficSources(mylinxId)
 
-  const timeSeriesData = await GetTimeSeriesData(kyteId)
+  const timeSeriesData = await GetTimeSeriesData(mylinxId)
 
   return res.status(200).json({
     success: true,

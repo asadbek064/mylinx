@@ -24,7 +24,7 @@ const Link = ({ user, link, isPreview }: LinksProps) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        kyteId: user.id,
+        mylinxId: user.id,
         username: user.username || '',
         linkURL: url || '',
         linkTitle: title || '',

@@ -21,11 +21,11 @@ const AddLinks = ({ user, setUser }: AddLinksProps) => {
         <Button
           w="full"
           rounded="lg"
-          bgGradient="linear(to-l, blue.500, purple.500)"
+          bgGradient="linear(to-r, green.300, green.700)"
           _focus={{ boxShadow: 'none' }}
           _hover={{ opacity: 0.8 }}
           _active={{ opacity: 0.6 }}
-          transitionDuration="0.5s"
+          transitionDuration="0.3s"
           color="white"
           size="lg"
           onClick={() => setModalOpen(true)}

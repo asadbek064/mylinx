@@ -71,7 +71,7 @@ const ChangeEmailModal = ({ modalOpen, setModalOpen, email }: ChangeEmailModalPr
               <Button colorScheme="red" onClick={() => setModalOpen(false)}>
                 Cancel
               </Button>
-              <Button colorScheme="blue" onClick={handleChangeEmail} isLoading={buttonLoading}>
+              <Button colorScheme="green" onClick={handleChangeEmail} isLoading={buttonLoading}>
                 Change email
               </Button>
             </HStack>

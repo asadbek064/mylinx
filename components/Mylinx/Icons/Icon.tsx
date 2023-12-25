@@ -24,7 +24,7 @@ const Icon = ({ icon, theme, userId, isPreview }: LinksProps) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        kyteId: userId,
+        mylinxId: userId,
         linkURL: icon.url,
         linkTitle: icon.name,
         referrer: document.referrer || '',

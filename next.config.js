@@ -19,9 +19,6 @@ const nextConfig = {
   },
   httpAgentOptions: {
     keepAlive: true,
-  },
-  env: {
-    
   }
 }
 
