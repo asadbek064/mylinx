@@ -4,11 +4,11 @@ const LandingHeroFull = () => {
     <section className="bg-white dark:bg-gray-900 py-24">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div className="mr-auto place-self-center lg:col-span-7">
-                <div className="max-w-3xl mb-4 font-extrabold tracking-tight leading-none [font-size:var(--step-5)] md:[font-size:var(--step-7)] text-primary-500">
-                    The TikTok bio link to rule them all
+                <div className="max-w-3xl mb-4 font-extrabold tracking-tight leading-none [font-size:var(--step-4)] md:[font-size:var(--step-7)] text-primary-500">
+                  Capture all of you with just one easy bio link.
                 </div>
-                <div className="max-w-3xl mb-6 font-light text-white lg:mb-8 [font-size:var(--step-1)]">
-                    Make the most of your TikTok bio link by not limiting it to just one destination. Mylinx assists in maximizing your Instagram account's potential.
+                <div className="max-w-3xl mb-6 font-light text-white lg:mb-8 [font-size:var(--step-0)] md:[font-size:var(--step-1)]">
+                    Make the most of your TikTok/Instagram bio link by not limiting it to just one destination. Mylinx assists in maximizing your account's potential.
                 </div>
                 
                 <div className="flex flex-col xl:flex-row xl:space-x-4 space-y-4 xl:space-y-0">

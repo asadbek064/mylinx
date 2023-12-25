@@ -17,12 +17,12 @@ const Navbar: React.FC<NavBarProps> = ({  }) => {
 
   return (
     <motion.nav
-      className="fixed z-20 h-5 top-4 w-11/12 md:max-w-screen-xl mx-auto inset-x-0 inset-y-0"
+      className="fixed z-20 h-5 md:top-4 w-full md:max-w-screen-xl mx-auto inset-x-0 inset-y-0"
       initial="hidden"
       animate="visible"
       variants={variants}
     >
-      <div className=" bg-neutral-50 p-4 flex items-center justify-between rounded-full">
+      <div className=" bg-neutral-50 p-4 flex items-center justify-between md:rounded-xl rounded-b-xl">
         {/* Logo */}
         <Link href={"/"}>
           <div className="flex items-center">
@@ -40,7 +40,7 @@ const Navbar: React.FC<NavBarProps> = ({  }) => {
         {/* Navigation Links */}
         <div className="flex items-center space-x-4">
           {/* Mobile Menu Button */}
-          <div className="lg:hidden items-center space-x-4 transition-all [font-size:var(--step--1)] md:[font-size:var(--step-0)]">
+          <div className="lg:hidden items-center space-x-4 transition-all [font-size:var(--step-0)] md:[font-size:var(--step-0)]">
             <Link href={"/login"}>
               <button className="text-neutral-800 bg-neutral-100 py-2 px-3 rounded-lg hover:bg-neutral-200 duration-75 ease-in">
                 Login
@@ -69,11 +69,6 @@ const Navbar: React.FC<NavBarProps> = ({  }) => {
               </button>    
             </Link>
 
-            <Link href={"/"}>
-              <button className="mr-4 text-neutral-900 hover:bg-neutral-200 rounded-lg duration-100 ease-out">
-                <TextIcon LeftIcon={IoMenu} className="w-8 h-8 p-1" />
-              </button>
-            </Link>
           </div>
         </div>
       </div>
