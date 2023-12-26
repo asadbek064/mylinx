@@ -11,7 +11,6 @@ const Link = ({ linkData }: { linkData: TLink }) => {
     <Flex
       borderWidth="1px"
       transitionDuration="0.2s"
-      _hover={{ transform: 'scale(1.01)' }}
       bg="white"
       align="center"
       w="full"

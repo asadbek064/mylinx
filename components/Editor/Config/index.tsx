@@ -17,7 +17,7 @@ type ConfigProps = {
 const Config = ({ user, setUser, route }: ConfigProps) => {
   const router = useRouter()
 
-  const ROUTES = ['links', 'design', 'analytics', 'settings']
+  const ROUTES = ['links', 'appearance', 'analytics', 'settings']
   const defaultIndex = ROUTES.indexOf(route) >= 0 ? ROUTES.indexOf(route) : 0
 
   return (
@@ -27,6 +27,8 @@ const Config = ({ user, setUser, route }: ConfigProps) => {
           defaultIndex={defaultIndex}
           onChange={(index) => router.push({ pathname: `/edit/${ROUTES[index]}` })}
           px={{ base: 0, md: 28 }}
+          variant="soft-rounded"
+          colorScheme='green'
         >
           <TabList justifyContent="space-between" w="full" mt={12}>
             {ROUTES.map((route) => (
@@ -36,7 +38,7 @@ const Config = ({ user, setUser, route }: ConfigProps) => {
                 _focus={{ borderTop: 'none' }}
                 p={0}
               >
-                <Text pb={1}>{route.charAt(0).toUpperCase() + route.slice(1)}</Text>
+                <Text className="py-1 px-4" pb={1}>{route.charAt(0).toUpperCase() + route.slice(1)}</Text>
               </Tab>
             ))}
           </TabList>

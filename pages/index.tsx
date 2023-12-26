@@ -30,13 +30,15 @@ const Home = () => {
        <LandingHeroFull />
 
        <div className='flex flex-col'>
-        {LANDING_FEATURES.map((feature, index) => (
-          <FeatureHero key={index+1} data={feature} />
-        ))}
+        <FeatureHero data={LANDING_FEATURES[0]} />
+        <FeatureHero data={LANDING_FEATURES[1]} />
+        <FeatureHero data={LANDING_FEATURES[2]} />
+
+
       </div>
 
       <VStack
-        minH={{ base: '80vh', lg: '95vh' }}
+        minH={{ base: '80vh', lg: '90vh' }}
         justify="space-between"
         spacing={{ base: 20, lg: 48 }}
         mt={{ base: 52, lg: 60 }}
@@ -46,7 +48,7 @@ const Home = () => {
         {/* <LandingDemo /> */}
 
 
-        <VStack spacing={32}>
+        <VStack spacing={22}>
           {/* <LandingExamples /> */}
           {/* <LandingAnalytics /> */}
           <LandingFooter />

@@ -14,7 +14,8 @@ export const LANDING_FEATURES: FeatureHero[]  = [
     bgColor: "#F87171",
     leftSide: false,
     color: '#B91C1C',
-    buttonColor: "primary"
+    buttonColor: "#16a34a",
+    buttonHoverColor: "#15803d"
   },
   {
     heading: "Analyze your audience and keep your followers engaged",
@@ -25,18 +26,20 @@ export const LANDING_FEATURES: FeatureHero[]  = [
     bgColor: "#FFFFFF",
     leftSide: true,
     color: '#111111',
-    buttonColor: "red"
+    buttonColor: "primary",
+    buttonHoverColor: ""
   },
   {
     heading: "Combine your content. F*ck the algorithm. Get paid.",
     subHeading: "It's time for your content to be noticed.",
-    buttonTitle: "",
+    buttonTitle: "Get started for free",
     buttonLink: "/blog",
     heroImage: "",
     bgColor: "#84CC16",
     leftSide: false,
     color: '#FFFFFF',
-    buttonColor: "blue"
+    buttonColor: "#2563eb",
+    buttonHoverColor: "#1d4ed8"
   }
 ]
 export const LANDING_ANALYITCS = {

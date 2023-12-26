@@ -79,7 +79,7 @@ const Icons = ({ user, setUser, setSelectedIcon, setModalOpen }: LinksProps) => 
           }}
           _hover={{ opacity: 0.7, transform: 'scale(1.05)' }}
           _active={{ opacity: 0.9, transform: 'scale(0.94)' }}
-          transitionDuration="0.5s"
+          transitionDuration="0.2s"
           cursor="pointer"
         />
       </Flex>

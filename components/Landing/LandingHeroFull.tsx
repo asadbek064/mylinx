@@ -15,7 +15,7 @@ const LandingHeroFull = () => {
                     <div className="">
                         <input
                             type="text"
-                            className="rounded-lg bg-no-repeat border-1 border-solid box-border py-8 h-12 md:pl-[8rem] w-full block text-2xl hover:border-neutral-400 border-2 active:border-spacing-1 border-[#000000] ease-in-out duration-100"
+                            className="outline-none rounded-lg bg-no-repeat border-1 border-solid box-border py-8 h-12 md:pl-[8rem] w-full block text-2xl border-2 active:border-spacing-1 border-[#161616] ease-in-out duration-150"
                             placeholder="yourname"
                             spellCheck="false"
                             style={{

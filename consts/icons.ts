@@ -9,7 +9,7 @@ const ICON_OPTIONS = [
   {
     name: 'Twitter',
     icon: 'FaTwitter',
-    prefill: 'https://twitter.com/',
+    prefill: 'https://x.com/',
     username: '0xLogan',
   },
   {
@@ -18,7 +18,7 @@ const ICON_OPTIONS = [
     prefill: 'https://snapchat.com/add/',
     username: 'coolguy123',
   },
-  // TODO: vcf is nuked rn. only here for those who have it already
+
   {
     name: 'Contact',
     icon: 'FaRegUserCircle',

@@ -67,7 +67,7 @@ const SelectedIcon = ({
       setSelectedIcon('')
       setLoading(false)
       closeModal()
-    }, 400)
+    }, 250)
   }
   const deleteIcon = () => {
     setLoading(true)
@@ -78,7 +78,7 @@ const SelectedIcon = ({
       setUser({ ...user, icons: newIcons })
       setSelectedIcon('')
       closeModal()
-    }, 300)
+    }, 250)
   }
 
   useEffect(() => {
@@ -116,7 +116,7 @@ const SelectedIcon = ({
             />
           </InputGroup>
           {exists && (
-            <Link onClick={deleteIcon} fontSize="sm" color="red.500">
+            <Link onClick={deleteIcon} fontSize="md" color="red.500">
               Delete Icon
             </Link>
           )}
@@ -125,7 +125,7 @@ const SelectedIcon = ({
       <ModalFooter p={0}>
         <Button
           bgGradient="linear(to-r, green.300, green.700)"
-          transitionDuration="300ms"
+          transitionDuration="200ms"
           _active={{ opacity: 0.8 }}
           py={3}
           _hover={{ opacity: 0.9 }}

@@ -20,17 +20,17 @@ const AddLinks = ({ user, setUser }: AddLinksProps) => {
       <HStack spacing={4}>
         <Button
           w="full"
-          rounded="lg"
+          rounded="full"
           bgGradient="linear(to-r, green.300, green.700)"
           _focus={{ boxShadow: 'none' }}
           _hover={{ opacity: 0.8 }}
           _active={{ opacity: 0.6 }}
-          transitionDuration="0.3s"
+          transitionDuration="0.25s"
           color="white"
           size="lg"
           onClick={() => setModalOpen(true)}
         >
-          Add Link
+          + Add Link
         </Button>
       </HStack>
       <LinkModal

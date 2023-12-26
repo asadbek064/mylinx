@@ -14,6 +14,7 @@ export interface FeatureHero {
   color: string;
   leftSide: boolean;
   buttonColor: string;
+  buttonHoverColor:string;
 }
 
 interface FeatureHeroProp {
@@ -72,7 +73,7 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
 
                 {data.buttonTitle.length > 0 ? (
                    <Link href={data.buttonLink}>
-                      <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-${data.buttonColor}-600 hover:bg-${data.buttonColor}-500 ease-in-out duration-100 focus:ring-4 focus:ring-primary-300`}>
+                      <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-${data.buttonColor}-600 hover:bg-${data.buttonColor}-700 ease-in-out duration-150 focus:ring-4 focus:ring-primary-300`}>
                         {data.buttonTitle}
                       </div>
                     </Link>
@@ -106,8 +107,8 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
 
                 {data.buttonTitle.length > 0 ? (
                    <Link href={data.buttonLink}>
-                      <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-${data.buttonColor}-600 hover:bg-${data.buttonColor}-500 ease-in-out duration-100 focus:ring-4 focus:ring-primary-300`}>
-                        {data.buttonTitle}
+                      <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-[${data.buttonColor}] hover:bg-[${data.buttonHoverColor}] ease-in-out duration-150 focus:ring-4 focus:ring-primary-300`}>
+                        {data.buttonTitle} https://tailwindcss.com/docs/content-configuration#dynamic-class-names
                       </div>
                     </Link>
                    
