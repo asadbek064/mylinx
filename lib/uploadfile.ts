@@ -47,7 +47,7 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: '10mb',
+      sizeLimit: '6mb',
     },
   },
 };

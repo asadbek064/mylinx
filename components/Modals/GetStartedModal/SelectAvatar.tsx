@@ -21,7 +21,7 @@ const SelectAvatar = ({ user, setUser }: GetStartedModalProps) => {
     setLoading(true)
 
     const file = e.target.files![0];
-    const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
+    const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5MB
 
 
     if (file.size < MAX_FILE_SIZE_BYTES) {

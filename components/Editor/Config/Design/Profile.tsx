@@ -26,7 +26,7 @@ const Profile = ({ user, setUser }: { user: TUser; setUser: (user: TUser) => voi
     setLoading(true)
 
     const file = e.target.files![0];
-    const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
+    const MAX_FILE_SIZE_BYTES = 6 * 1024 * 1024; // 6MB
 
 
     if (file.size < MAX_FILE_SIZE_BYTES) {
