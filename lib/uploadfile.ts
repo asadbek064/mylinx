@@ -44,3 +44,10 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
     return { error: error.message };
   }
 }
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb',
+    },
+  },
+};
