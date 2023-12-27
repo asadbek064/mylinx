@@ -25,13 +25,34 @@ const Profile = ({ user, setUser }: { user: TUser; setUser: (user: TUser) => voi
   const uploadImage = async (e: ChangeEvent<HTMLInputElement>) => {
     setLoading(true)
 
-    const { imageURL, blurpfp, error } = await uploadFile(e.target.files![0], true)
+    const file = e.target.files![0];
+    const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
+
+
+    if (file.size < MAX_FILE_SIZE_BYTES) {
+      const { imageURL, blurpfp, error } = await uploadFile(e.target.files![0], true)
 
     if (imageURL && !error) {
       setUser({ ...user, pfp: imageURL, blurpfp: blurpfp || '' })
       trackClientEvent({ event: PosthogEvents.UPDATED_AVATAR, user })
     } else {
-      toast({ title: 'Error', description: error, status: 'error' })
+      toast({
+        title: 'Error',
+        description: error,
+        status: 'error',
+        duration: 10000,
+        isClosable: true,
+      })
+    }
+
+    } else {
+      toast({
+        title: 'Error',
+        description: 'Please ensure that the image size is under 10MB.',
+        status: 'error',
+        duration: 10000,
+        isClosable: true,
+      });
     }
 
     setLoading(false)
