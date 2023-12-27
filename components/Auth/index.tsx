@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
+import { motion, Transition } from 'framer-motion';
 
 import {
   Button,
@@ -102,7 +103,18 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
     trackClientEvent({ event: PosthogEvents.HIT_AUTH })
   }, [])
 
+  const inputTransition: Transition = {
+    type: 'tween', // or other types like spring, etc.
+    duration: 0.6,
+  };
+
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.25 }}
+    >
     <>
       <NextSeo title={`${isLogin ? 'Log in' : 'Sign up'} | mylinx`} />
       
@@ -125,13 +137,21 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
 
           <VStack spacing={3}>
             <Input
+              as={motion.input}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: '150ms',
+                type: 'easeIn'
+              }} 
+
               _hover={{ bg: 'gray.100' }}
               _focus={{
                 bg: 'gray.100',
                 borderColor: isValid === null ? 'gray.500' : isValid ? 'green.500' : 'red.500',
               }}
               borderColor={isValid === null ? 'gray.300' : isValid ? 'green.600' : 'red.500'}
-              transitionDuration="350ms"
+              transitionDuration="250ms"
               onChange={(e) => {
                 validateDebouncer(e.target.value)
               }}
@@ -141,12 +161,17 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
               placeholder="hermanmillar@example.com"
             />
             <Button
+             as={motion.button}
+             initial={{ opacity: 0, scale: 0.95 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 0.15}}
+
               style={{backgroundColor: "#22c55e"}}
                w="full"
               textColor="white"
               _hover={isValid !== false && !emailLoading ? { opacity: 0.8 } : {}}
               _active={isValid !== false && !emailLoading ? { opacity: 0.5 } : {}}
-              transition="0.3s"
+              transition="0.15s"
               onClick={authEmail}
               isLoading={emailLoading}
               isDisabled={isValid === null ? false : isValid === false ? true : false}
@@ -164,6 +189,11 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
           <VStack spacing={3}>
             {PROVIDERS.map((item, i) => (
               <Button
+               as={motion.button}
+               initial={{ opacity: 0, scale: 0.95 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 0.15}}
+
                 key={i}
                 bg={item.color}
                 textColor="white"
@@ -192,6 +222,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
         </VStack>
       </Center>
     </>
+    </motion.div>
   )
 }
 export default AuthComponent

@@ -9,9 +9,6 @@ import { PosthogEvents } from 'consts/posthog'
 import LandingFooter from 'components/Landing/LandingFooter'
 import LandingOpenSource from 'components/Landing/LandingOpenSource'
 import LandingAnalytics from 'components/Landing/LandingAnalytics'
-import LandingExamples from 'components/Landing/LandingExamples'
-import LandingHero from 'components/Landing/LandingHero'
-import LandingDemo from 'components/Landing/LandingDemo'
 import LandingHeroFull from 'components/Landing/LandingHeroFull'
 import FeatureHero from 'components/shared/FeatureHero'
 import { LANDING_FEATURES } from "consts/landingpage";
@@ -32,6 +29,7 @@ const Home = () => {
        <div className='flex flex-col'>
         <FeatureHero data={LANDING_FEATURES[0]} />
         <FeatureHero data={LANDING_FEATURES[1]} />
+        {/* <LandingAnalytics /> */}
         <FeatureHero data={LANDING_FEATURES[2]} />
 
 
@@ -44,12 +42,7 @@ const Home = () => {
         mt={{ base: 52, lg: 60 }}
         color="black"
       >
-        {/*  <LandingHero /> */}
-        {/* <LandingDemo /> */}
-
-
         <VStack spacing={22}>
-          {/* <LandingExamples /> */}
           {/* <LandingAnalytics /> */}
           <LandingFooter />
         </VStack>

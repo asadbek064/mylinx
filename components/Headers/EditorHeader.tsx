@@ -94,10 +94,10 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
         borderColor="gray.200"
         justifyContent="center"
         as="nav"
-        h="72px"
+        h="74px"
       >
         <Container maxW="container.2xl" px={{ base: 4, md: 12 }}>
-          <SimpleGrid columns={3} w="full" alignItems="center">
+          <SimpleGrid columns={2} w="full" alignItems="center">
             <Spacer />
             <HStack spacing={{ base: 4, md: 6 }} justifyContent="flex-end">
               <HStack spacing={1}>

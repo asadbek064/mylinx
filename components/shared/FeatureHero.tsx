@@ -108,7 +108,7 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
                 {data.buttonTitle.length > 0 ? (
                    <Link href={data.buttonLink}>
                       <div className={`inline-flex items-center px-5 py-4  font-medium text-center [font-size:var(--step-1)] md:[font-size:var(--step-2)] text-white rounded-full bg-[${data.buttonColor}] hover:bg-[${data.buttonHoverColor}] ease-in-out duration-150 focus:ring-4 focus:ring-primary-300`}>
-                        {data.buttonTitle} https://tailwindcss.com/docs/content-configuration#dynamic-class-names
+                        {data.buttonTitle}
                       </div>
                     </Link>
                    

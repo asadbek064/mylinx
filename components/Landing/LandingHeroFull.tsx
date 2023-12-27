@@ -28,7 +28,7 @@ const LandingHeroFull = () => {
                     </div>
 
                     <div className="w-full">
-                        <a href="#" className="inline-flex items-center px-5 py-5 md:py-4 font-medium text-center text-2xl text-white rounded-full bg-primary-600 hover:bg-primary-500 ease-in-out duration-100 focus:ring-4 focus:ring-primary-300">
+                        <a href="/signup" className="inline-flex items-center px-5 py-5 md:py-4 font-medium text-center text-2xl text-white rounded-full bg-primary-600 hover:bg-primary-500 ease-in-out duration-100 focus:ring-4 focus:ring-primary-300">
                             Claim your Mylinx
                         </a>
                     </div>
