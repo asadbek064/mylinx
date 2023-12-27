@@ -12,7 +12,7 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
     formData.append('file', file);
 
     //@ts-ignore
-    const upload = await fetch(`http://127.0.0.1:3002/upload/image`, {
+    const upload = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/upload/image`, {
       method: 'POST',
       body: formData as unknown as URLSearchParams, 
     });
