@@ -22,7 +22,7 @@ import { FaArrowLeft } from 'react-icons/fa'
 import { debounce } from 'lodash'
 import data from '@emoji-mart/data'
 
-import { FaIconKey, TUser } from 'types/user'
+import { AllIconKeys, FaIconKey, TUser } from 'types/user'
 
 import { uploadFile } from 'lib/uploadfile'
 import DynamicIcon from 'components/DynamicIcon'
@@ -189,7 +189,7 @@ const AddEmojiModal = ({ emoji, setEmoji, setAddEmoji, user }: AddEmojiModalProp
                   onClick={() => handleSelectEmoji(iconOption)}
                 >
                   <Center key={index}>
-                    <DynamicIcon icon={iconOption as FaIconKey} size={36} />
+                    <DynamicIcon icon={iconOption as AllIconKeys} size={36} />
                   </Center>
                 </Box>
               ))}

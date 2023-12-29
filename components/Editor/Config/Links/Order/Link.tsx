@@ -1,7 +1,7 @@
 import { Flex, Box, Text, Spacer, Center, Image } from '@chakra-ui/react'
 import { BsPencilSquare } from 'react-icons/bs'
 
-import { FaIconKey, TLink } from 'types/user'
+import { AllIconKeys, FaIconKey, TLink } from 'types/user'
 import DynamicIcon from 'components/DynamicIcon'
 
 const Link = ({ linkData }: { linkData: TLink }) => {
@@ -21,7 +21,7 @@ const Link = ({ linkData }: { linkData: TLink }) => {
       borderRadius="4px"
     >
       <Center bg={color} w="10" h="10" borderRadius="lg">
-        {emoji?.includes('Fa') && <DynamicIcon icon={emoji as FaIconKey} size={36} />}
+        {emoji?.includes('Fa') && <DynamicIcon icon={emoji as AllIconKeys} size={36} />}
 
         {emoji?.includes('://') && (
           <Image src={emoji} alt="emoji" rounded="md" my={2} objectFit="cover" />

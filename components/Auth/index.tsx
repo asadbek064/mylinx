@@ -41,7 +41,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
 
   const validateDebouncer = debounce((name) => {
     validate(name)
-  }, 200)
+  }, 150)
 
   const validate = async (name: string) => {
     if (!name || name.length < 3) {
@@ -65,8 +65,6 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
     if (provider === 'google') setGoogleLoading(true)
     if (provider === 'github') setGithubLoading(true)
 
-    console.log('authing with', provider)
-    console.log(BASE_URL)
     await signIn(provider, {
       callbackUrl: `${BASE_URL}/edit`,
     })
@@ -74,7 +72,7 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
     setTimeout(() => {
       if (provider === 'google') setGoogleLoading(false)
       if (provider === 'github') setGithubLoading(false)
-    }, 500)
+    }, 200)
   }
 
   const authEmail = async () => {
@@ -96,17 +94,12 @@ const AuthComponent = ({ isLogin }: { isLogin: boolean }) => {
 
     setTimeout(() => {
       setEmailLoading(false)
-    }, 1000)
+    }, 500)
   }
 
   useEffect(() => {
     trackClientEvent({ event: PosthogEvents.HIT_AUTH })
   }, [])
-
-  const inputTransition: Transition = {
-    type: 'tween', // or other types like spring, etc.
-    duration: 0.6,
-  };
 
   return (
     <motion.div

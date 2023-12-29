@@ -14,8 +14,8 @@ import {
   useToast,
 } from '@chakra-ui/react'
 
-import { FaIconKey, TIcon, TUser } from 'types/user'
-import DynamicIcon from 'components/DynamicIcon'
+import { AllIconKeys, FaIconKey, TIcon, TUser } from 'types/user'
+import DynamicIcon, { IconType } from 'components/DynamicIcon'
 import ICON_OPTIONS, { TIconOption } from 'consts/icons'
 
 type AddIconModalProps = {
@@ -34,7 +34,7 @@ const AddIcon = ({ user, setSelectedIcon, closeModal }: AddIconModalProps) => {
     setTimeout(() => {
       closeModal()
       setLoading(false)
-    }, 400)
+    }, 350)
   }
 
   return (
@@ -64,7 +64,7 @@ const AddIcon = ({ user, setSelectedIcon, closeModal }: AddIconModalProps) => {
                   borderRadius="md"
                 >
                   <HStack>
-                    <DynamicIcon icon={option.icon as FaIconKey} />
+                    <DynamicIcon icon={option.icon as AllIconKeys} iconSet={option.iconSet as IconType} />
                     <Text>{option.name}</Text>
                   </HStack>
                   <Spacer />

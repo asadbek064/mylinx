@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 
 import { GrAddCircle } from 'react-icons/gr'
-import { FaIconKey, TLink, TUser } from 'types/user'
+import { AllIconKeys, FaIconKey, TLink, TUser } from 'types/user'
 
 import DynamicIcon from 'components/DynamicIcon'
 import { trackClientEvent } from 'lib/posthog'
@@ -176,7 +176,7 @@ const EditLinkModal = ({
                 >
                   <Center w={20} h={20} bg={color} p={isEmoji ? 4 : 0} rounded="xl">
                     <Text fontSize="3xl">
-                      {emoji?.includes('Fa') && <DynamicIcon icon={emoji as FaIconKey} size={36} />}
+                      {emoji?.includes('Fa') && <DynamicIcon icon={emoji as AllIconKeys} size={36} />}
                       {emoji?.includes('://') && (
                         <Image src={emoji} alt="emoji" rounded="md" my={2} objectFit="cover" />
                       )}

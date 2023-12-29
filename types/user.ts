@@ -1,4 +1,5 @@
-import * as icons from 'react-icons/fa'
+import * as faIcons from 'react-icons/fa';
+import * as siIcons from 'react-icons/si';
 
 export type TUser = {
   id: string
@@ -34,12 +35,13 @@ export type TLink = {
 }
 
 export type TIcon = {
-  name: keyof typeof icons
+  name: AllIconKeys
   url: string | null | undefined
   isPreview?: boolean
 }
 
-export type FaIconKey = keyof typeof icons
+export type AllIconKeys = keyof typeof faIcons | keyof typeof siIcons;
+export type FaIconKey = keyof typeof faIcons
 
 export type TUserContext = {
   user: TUser | null

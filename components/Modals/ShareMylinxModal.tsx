@@ -23,7 +23,7 @@ type GetStartedModalProps = {
 }
 
 const ShareMylinxModal = ({ modalOpen, setModalOpen, username }: GetStartedModalProps) => {
-  const urls = ['mylinx.bio', 'mylinx.lol', 'mylinx.cc', 'yoyo.so']
+  const urls = ['mylinx.cc', ]
   const socials = [
     {
       icon: FaTwitter,
