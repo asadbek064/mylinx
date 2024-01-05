@@ -8,10 +8,11 @@ export async function getStripeCustomerIdByEmail(email: string): Promise<string 
           email: email,
         },
         select: {
-          stripeCustomerId: true,
+           //@ts-ignore
+          stripeCustomerId: true, 
         },
       });
-  
+       //@ts-ignore
       return user?.stripeCustomerId || '';
     } catch (error) {
       // Handle errors or return a default value
