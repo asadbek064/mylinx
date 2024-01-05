@@ -5,6 +5,7 @@ import { TUser } from 'types/user'
 import AddDomain from './AddDomain'
 import DangerZone from './DangerZone'
 import Metadata from './Metadata'
+import Plandata from './Plandata'
 import Redirect from './Redirect'
 
 const Settings = ({ user, setUser }: { user: TUser; setUser: (user: TUser) => void }) => {
@@ -13,6 +14,8 @@ const Settings = ({ user, setUser }: { user: TUser; setUser: (user: TUser) => vo
       <AddDomain user={user} setUser={setUser} />
       <Redirect user={user} setUser={setUser} />
       <Metadata user={user} setUser={setUser} />
+      <Metadata user={user} setUser={setUser} />
+      <Plandata user={user} setUser={setUser} />
       <DangerZone user={user} setUser={setUser} />
     </VStack>
   )

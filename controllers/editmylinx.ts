@@ -1,4 +1,5 @@
-import prisma from 'lib/prisma'
+import prisma from 'util/ssr/prisma'
+
 import { TUser } from 'types/user'
 
 export const updateMylinxEmail = async (userId: string, email: string) => {

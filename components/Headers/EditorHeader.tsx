@@ -131,10 +131,13 @@ const EditorHeader = ({ user }: { user: TUser | null }) => {
                     <PopoverBody display="block">
                       <VStack align="left" w="fit">
                         <Link onClick={() => window.open(`/${user?.username}`)} colorScheme="blue">
-                          View Profile
+                          Live Page
                         </Link>
                         <Link onClick={() => setModalOpen(true)} colorScheme="blue">
                           Share Mylinx
+                        </Link>
+                        <Link href={'/plan'} colorScheme="blue">
+                          Billing
                         </Link>
                         <Link onClick={logout} colorScheme="blue">
                           Log out

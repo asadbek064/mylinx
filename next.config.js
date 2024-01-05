@@ -19,7 +19,10 @@ const nextConfig = {
   },
   httpAgentOptions: {
     keepAlive: true,
-  }
+  },
+  experimental: {
+    serverActions: true,
+  },
 }
 
 module.exports = nextConfig

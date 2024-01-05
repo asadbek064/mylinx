@@ -1,4 +1,4 @@
-import prisma from 'lib/prisma'
+import prisma from 'util/ssr/prisma'
 
 export const fetchUserDomains = async (userId: string): Promise<string[]> => {
   const domainData = await prisma.domains.findMany({
