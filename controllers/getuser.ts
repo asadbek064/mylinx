@@ -1,4 +1,4 @@
-import prisma from 'lib/prisma'
+import prisma from 'util/ssr/prisma'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { getSession } from 'next-auth/react'
 import { TUser } from 'types/user'
@@ -47,6 +47,8 @@ export const getUserFromNextAuth = async (
 ): Promise<TUserRes> => {
   const session = await getServerSession(req, res, authOptions)
 
+  console.log(session);
+  
   if (!session?.user?.email) return { error: 'No email found' }
 
   const user = await prisma.mylinxDraft.findFirst({ where: { email: session.user.email } })

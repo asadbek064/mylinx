@@ -7,8 +7,6 @@ import { trackClientEvent } from 'lib/posthog'
 import { PosthogEvents } from 'consts/posthog'
 
 import LandingFooter from 'components/Landing/LandingFooter'
-import LandingOpenSource from 'components/Landing/LandingOpenSource'
-import LandingAnalytics from 'components/Landing/LandingAnalytics'
 import LandingHeroFull from 'components/Landing/LandingHeroFull'
 import FeatureHero from 'components/shared/FeatureHero'
 import { LANDING_FEATURES } from "consts/landingpage";
@@ -31,9 +29,10 @@ const Home = () => {
         <FeatureHero data={LANDING_FEATURES[1]} />
         {/* <LandingAnalytics /> */}
         <FeatureHero data={LANDING_FEATURES[2]} />
+        </div>
 
 
-      </div>
+        
 
       <VStack
         minH={{ base: '80vh', lg: '90vh' }}

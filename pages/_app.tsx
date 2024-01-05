@@ -10,6 +10,7 @@ import { TUser } from 'types/user'
 import { initializePostHog } from 'lib/posthog'
 import BaseLayout from 'components/layout/BaseLayout';
 import React from 'react';
+import { SessionProvider } from 'next-auth/react';
 
 type NextPageWithLayout = NextPage & { getLayout?: (page: ReactElement) => ReactNode }
 type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout }
@@ -26,10 +27,9 @@ const theme = extendTheme({
 })
 
 
-const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout =
-    // @ts-ignore
-    Component.getLayout || ((page) => <BaseLayout>{page}</BaseLayout>);
+const App = ({ Component, pageProps: { session, ...otherProps } }: AppPropsWithLayout) => {
+  // @ts-ignore
+  const getLayout = Component.getLayout || ((page) => <BaseLayout>{page}</BaseLayout>);
     
   const [user, setUser] = useState<TUser | null>(null)
   const [mylinxProd, setMylinxProd] = useState<TUser | null>(null)
@@ -69,7 +69,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         {getLayout(
           <UserContext.Provider value={{ user, setUser }}>
             <MylinxProdContext.Provider value={{ mylinxProd, setMylinxProd }}>
-              <Component {...pageProps} />
+              <SessionProvider session={session}>
+                <Component {...otherProps} />
+              </SessionProvider>
             </MylinxProdContext.Provider>
           </UserContext.Provider>
         )}

@@ -10,7 +10,7 @@ CREATE TABLE "Account" (
     "expires_at" INTEGER,
     "token_type" TEXT,
     "scope" TEXT,
-    "id_token" TEXT,
+    "idToken" TEXT,
     "session_state" TEXT,
 
     CONSTRAINT "Account_pkey" PRIMARY KEY ("id")

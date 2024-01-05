@@ -1,9 +1,9 @@
-import prisma from 'lib/prisma'
 import { Device } from 'types/utils'
 
 import { addDays, format } from 'date-fns'
 import { trackServerEvent } from 'lib/posthog'
 import { PosthogEvents } from 'consts/posthog'
+import prisma from 'util/ssr/prisma'
 
 type TPageHit = {
   mylinxId: string

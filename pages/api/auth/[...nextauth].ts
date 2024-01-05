@@ -1,4 +1,3 @@
-import prisma from 'lib/prisma'
 import NextAuth from 'next-auth'
 import type { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
@@ -9,9 +8,12 @@ import { trackServerEvent } from 'lib/posthog'
 import { PosthogEvents } from 'consts/posthog'
 import { cleanPrismaData } from 'lib/utils'
 import { sendMagicLink } from 'controllers/emails'
+import { Adapter } from 'next-auth/adapters'
+import prisma from 'util/ssr/prisma'
+import { NextApiHandler } from 'next'
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma) as any,
+  adapter: PrismaAdapter(prisma) as Adapter,
   secret: process.env.SECRET,
   providers: [
     GoogleProvider({
@@ -47,6 +49,16 @@ export const authOptions: NextAuthOptions = {
     signIn: '/auth/error',
   },
   callbacks: {
+    async session({ session, user }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: user.id,
+        },
+      };
+    },
+
     async signIn({ user, account }) {
       if (!user.email || !account) return false
 
@@ -80,8 +92,8 @@ export const authOptions: NextAuthOptions = {
             expires_at: account.expires_at,
             token_type: account.token_type,
             scope: account.scope,
-            id_token: account.id_token,
-            session_state: account.session_state,
+            idToken: account.id_token, 
+            sessionState: account.session_state,
           },
         })
         return true
@@ -106,6 +118,8 @@ export const authOptions: NextAuthOptions = {
       }
     },
     createUser: async ({ user }) => {
+
+      // create a intial draft page for onboarding
       await prisma.mylinxDraft.create({
         data: {
           userId: user.id,
@@ -130,4 +144,5 @@ export const authOptions: NextAuthOptions = {
   },
 }
 
-export default NextAuth(authOptions)
+const authHandler:  NextApiHandler = (req, res) => NextAuth(req, res, authOptions);
+export default authHandler;

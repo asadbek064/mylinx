@@ -1,4 +1,4 @@
-import prisma from 'lib/prisma'
+import prisma from 'util/ssr/prisma'
 
 export const validateEmail = async (email: string): Promise<boolean> => {
   const draftUser = await prisma.mylinxDraft.findFirst({
