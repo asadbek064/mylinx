@@ -57,7 +57,7 @@ const FeatureHero: React.FC<FeatureHeroProp> = ({ data }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
       className="py-16"
-      style={{ backgroundColor: data.bgColor }}
+      style={{ backgroundColor: data.bgColor } as React.CSSProperties}
     >
       <div style={{ backgroundColor: data.bgColor }} className="py-16">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">

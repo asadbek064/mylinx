@@ -15,7 +15,8 @@ import {
   Link,
   background,
 } from '@chakra-ui/react'
-import { debounce } from 'lodash'
+import { debounce } from 'lodash';
+
 import { signIn } from 'next-auth/react'
 
 import { IoIosArrowBack } from 'react-icons/io'
